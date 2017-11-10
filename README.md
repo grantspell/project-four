@@ -1,24 +1,9 @@
-# README
+# Project IV
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* [ Heroku | LIVE Link ](https://project-four.herokuapp.com/)
 
-Things you may want to cover:
+## Planning
 
-* Ruby version
+### Trello Board
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* [ Trello Board | Link ](https://trello.com/b/QpOi31Cc)

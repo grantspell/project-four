@@ -8,4 +8,6 @@
 
 * [ Trello Board | Link ](https://trello.com/b/QpOi31Cc)
 
-* ![ ERD ](./images/erd.jpeg)
+### ERD
+
+![ Project IV ERD ](./images/erd.jpeg)

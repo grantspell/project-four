@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171112184554) do
+ActiveRecord::Schema.define(version: 20171112192006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "artist_type"
     t.text "description"
     t.string "artist_image"
     t.datetime "created_at", null: false
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20171112184554) do
     t.string "audio_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "collection_id"
+    t.bigint "artist_id"
+    t.index ["artist_id"], name: "index_audios_on_artist_id"
+    t.index ["collection_id"], name: "index_audios_on_collection_id"
   end
 
   create_table "collections", force: :cascade do |t|
@@ -38,6 +42,8 @@ ActiveRecord::Schema.define(version: 20171112184554) do
     t.boolean "publish_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -45,6 +51,8 @@ ActiveRecord::Schema.define(version: 20171112184554) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "collection_id"
+    t.index ["collection_id"], name: "index_entries_on_collection_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,6 +69,16 @@ ActiveRecord::Schema.define(version: 20171112184554) do
     t.string "visual_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "collection_id"
+    t.bigint "artist_id"
+    t.index ["artist_id"], name: "index_visuals_on_artist_id"
+    t.index ["collection_id"], name: "index_visuals_on_collection_id"
   end
 
+  add_foreign_key "audios", "artists"
+  add_foreign_key "audios", "collections"
+  add_foreign_key "collections", "users"
+  add_foreign_key "entries", "collections"
+  add_foreign_key "visuals", "artists"
+  add_foreign_key "visuals", "collections"
 end

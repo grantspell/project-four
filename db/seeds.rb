@@ -19,6 +19,7 @@ Collection.create({ title: "Ethereal", mood_keywords: ['ethereal', 'inspired', '
 Entry.create({ title: "Finding Inspiration In The Stars", content: "Here I am searching the night sky for shooting stars through my kaleidescope. Listening to St. Vincent and studying Dalí's mind-bending work. Life is good.", collection_id: 1 })
 
 # A ARTISTS
+Artist.create({ name: "St. Vincent", artist_type: "audio", description: "Anne Erin 'Annie' Clark (born September 28, 1982),[5][6] better known by her stage name St. Vincent, is an American musician, singer-songwriter, and multi-instrumentalist. After studying at Berklee College of Music for three years, she began her music career as a member of the Polyphonic Spree. Clark was also a member of Sufjan Stevens's touring band before forming her own band in 2006.", artist_image: "https://pbs.twimg.com/profile_images/917819850625617926/6Vs1Ae6B.jpg" })
 
 # V ARTISTS
 Artist.create({ name: "Salvador Dalí", artist_type: "visual", description: "A surrealist painter, the Spanish Salvador Dali is one of the most enigmatic artists of the twentieth century. Known for his weird and outlandish subject matter, Dali's most famous work of art is probably The Persistence of Memory (1931), often called just 'Clocks' and widely regarded as a Surrealist masterpiece.", artist_image: "https://kristallwelten.swarovski.com/Content.Node/wattens/Salvador_Dali_Swarovski.jpg?w=460&h=345" })
@@ -27,3 +28,4 @@ Artist.create({ name: "Salvador Dalí", artist_type: "visual", description: "A s
 Visual.create({ title: "The Burning Giraffe", visual_url: "https://learnodo-newtonic.com/wp-content/uploads/2017/02/The-Burning-Giraffe-1937-Salvador-Dali.jpg", artist_id: 1, collection_id: 1 })
 
 # AUDIOS
+Audio.create({ song: "Dilettante", album: "Strange Mercy", audio_url: "https://www.youtube.com/watch?v=894MYqeAzIo", artist_id: 2, collection_id: 1 })

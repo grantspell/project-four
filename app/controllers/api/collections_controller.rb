@@ -5,5 +5,9 @@ class Api::CollectionsController < ApplicationController
 
         render json: @collections
     end
+
+    def show
+        
+    end
     
 end

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 
 // COMPONENTS
@@ -12,11 +13,30 @@ const WorkspaceWrapper = styled.div`
 `
 
 class Workspace extends Component {
+
+    state = {
+        users: [],
+    }
+
+    componentWillMount() {
+        this.getUserData()
+    }
+
+    getUserData = async () => {
+        const res = await axios.get(`/api/users/`)
+        this.setState({ users: res.data })
+    }
+
     render() {
         return (
             <WorkspaceWrapper>
-                <SideBar />
-                <WorkingCollection />
+
+                {this.state.users.map(user => (
+                    <h1>Name: {user.name}</h1>
+                ))}
+                
+                {/* <SideBar />
+                <WorkingCollection /> */}
             </WorkspaceWrapper>
         );
     }

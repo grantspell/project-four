@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     get "/collections", to: "collections#index", as: "collections"
   end
 
+  
+
 end

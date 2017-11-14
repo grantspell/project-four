@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 // COMPONENTS
 import SideBar from './SideBar.js'
-import WorkingCollection from './WorkingCollection.js'
+import Collection from './Collection.js'
 
 // STYLES
 const WorkspaceWrapper = styled.div`
@@ -12,10 +12,15 @@ const WorkspaceWrapper = styled.div`
     justify-content: flex-start;
 `
 
-class Workspace extends Component {
+class WorkspaceView extends Component {
 
     state = {
-        users: [],
+        user: {
+            name: '',
+            username: '',
+            user_image: ''
+        },
+        userCollections: []
     }
 
     componentWillMount() {
@@ -23,7 +28,10 @@ class Workspace extends Component {
     }
 
     getUserData = async () => {
-        const res = await axios.get(`/api/users/`)
+        const username = this.props.match.params
+
+
+        const res = await axios.get(`/api/users/${username}`)
         this.setState({ users: res.data })
     }
 
@@ -31,15 +39,13 @@ class Workspace extends Component {
         return (
             <WorkspaceWrapper>
 
-                {this.state.users.map(user => (
-                    <h1>Name: {user.name}</h1>
-                ))}
+                {this.state.user.name}
                 
                 {/* <SideBar />
-                <WorkingCollection /> */}
+                <Collection /> */}
             </WorkspaceWrapper>
         );
     }
 }
 
-export default Workspace;
+export default WorkspaceView;

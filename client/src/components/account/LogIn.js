@@ -7,7 +7,6 @@ class LogIn extends Component {
     render() {
         return (
             <div>
-
                 <LogInForm />
             </div>
         );

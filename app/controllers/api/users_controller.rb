@@ -17,9 +17,9 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        user_id = params[:id]
+        username = params[:username]
 
-        @user = User.find_by_id(user_id)
+        @user = User.find_by_username(username)
 
         render json: @user
     end

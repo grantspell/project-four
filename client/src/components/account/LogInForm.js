@@ -1,12 +1,34 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class LogInForm extends Component {
+
+    state = {
+        users: []
+    }
+
+    componentWillMount() {
+        this.getUsers()
+    }
+
+    getUsers = async () => {
+
+        const res = await axios.get('/api/users')
+        this.setState({ users: res.data })
+
+    }
+    
     render() {
         return (
             <div>
-                LogIn Form
-                <h1><Link to="/workspace">DEMO</Link></h1>
+                <h1>Existing Users</h1>
+                {this.state.users.map(user => (
+                    <div key={user.username}>
+                        <h3>Name: <Link to={`/workspace/${user.username}`} >{user.name}</Link></h3>
+                        <p>Username: {user.username}</p>
+                    </div>
+                ))}
             </div>
         );
     }

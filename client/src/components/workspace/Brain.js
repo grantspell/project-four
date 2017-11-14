@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class WorkingCollection extends Component {
+class Brain extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class WorkingCollection extends Component {
     }
 }
 
-export default WorkingCollection;
+export default Brain;

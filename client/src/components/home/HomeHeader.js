@@ -6,13 +6,13 @@ import styled from 'styled-components';
 const HeaderStyles = styled.div`
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 0, 1);
+    background-color: rgba(255, 0, 0, );
 `
 const Logo = styled.div`
     flex: 1;
     margin-left: 10px;
     color: #0041D8;
-    text-shadow: -4px -4px 0px white;
+    text-shadow: -1px -1px 0px white;
 `
 const ButtonOne = styled.div`
     margin-right: 10px;

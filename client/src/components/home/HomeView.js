@@ -12,7 +12,7 @@ const HomeWrapper = styled.div`
 
 `
 
-class HomePage extends Component {
+class HomeView extends Component {
     render() {
         return (
             <HomeWrapper>
@@ -23,4 +23,4 @@ class HomePage extends Component {
     }
 }
 
-export default HomePage;
+export default HomeView;

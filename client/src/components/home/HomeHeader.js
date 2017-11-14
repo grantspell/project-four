@@ -31,11 +31,11 @@ class HomeHeader extends Component {
                 </Logo>
                 
                 <ButtonOne>
-                    <button><Link to="/login">Log In</Link></button>
+                    <button><Link to="/account">Log In</Link></button>
                 </ButtonOne>
                 
                 <ButtonTwo>
-                    <button><Link to="/signup">Sign Up</Link></button>
+                    <button><Link to="/account">Sign Up</Link></button>
                 </ButtonTwo>
                 
             </HeaderStyles>

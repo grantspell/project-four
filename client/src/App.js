@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import HomeView from './components/home/HomeView.js'
 import AccountView from './components/account/AccountView.js'
 import WorkspaceView from './components/workspace/WorkspaceView.js'
+import LibraryView from './components/library/LibraryView.js'
 
 class App extends Component {
   render() {
@@ -16,7 +17,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomeView} />
           <Route path="/account" component={AccountView} />
-          <Route path="/workspace" component={WorkspaceView} />
+          <Route path="/workspace/:username" component={WorkspaceView} />
+          <Route exact path="/library" component={LibraryView} />
         </Switch>
         </div>
       </Router>

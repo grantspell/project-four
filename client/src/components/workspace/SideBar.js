@@ -34,36 +34,65 @@ const ButtonStyle = styled.div`
 
 `
 
-class SideBar extends Component {
-    render() {
-        return (
-            <SideBarStyle>
-                <UserInfo>
-                    <img src="https://www.arabiaweddings.com/sites/default/files/news/2014/06/anna.jpg" />
-                    <h1>Anna Wintour</h1>
-                    <p>@VogueWintour</p>
-                </UserInfo>
-                <ListsStyle>
-                    <h1>COLLECTIONS</h1>
-                    <ul>
-                        <li>ETHEREAL</li>
-                        <li>SUNDOWNING AGAIN</li>
-                        <li>REFILL</li>
-                    </ul>
-                    <h1>MOODS</h1>
-                    <ul>
-                        <li>ALMOST HAPPY</li>
-                        <li>ANXIOUS</li>
-                        <li>LUMINOUS</li>
-                    </ul>
-                </ListsStyle>
-                <ButtonStyle>
-                    <button>Visual Artists</button>
-                    <button>Audio Artists</button>
-                </ButtonStyle>
-            </SideBarStyle>
-        );
-    }
-}
+// class SideBar extends Component {
+//     render() {
+//         return (
+//             <SideBarStyle>
+//                 <UserInfo>
+//                     <img src="https://www.arabiaweddings.com/sites/default/files/news/2014/06/anna.jpg" />
+//                     <h1>Anna Wintour</h1>
+//                     <p>@VogueWintour</p>
+//                 </UserInfo>
+//                 <ListsStyle>
+//                     <h1>COLLECTIONS</h1>
+//                     <ul>
+//                         <li>ETHEREAL</li>
+//                         <li>SUNDOWNING AGAIN</li>
+//                         <li>REFILL</li>
+//                     </ul>
+//                     <h1>MOODS</h1>
+//                     <ul>
+//                         <li>ALMOST HAPPY</li>
+//                         <li>ANXIOUS</li>
+//                         <li>LUMINOUS</li>
+//                     </ul>
+//                 </ListsStyle>
+//                 <ButtonStyle>
+//                     <button>Visual Artists</button>
+//                     <button>Audio Artists</button>
+//                 </ButtonStyle>
+//             </SideBarStyle>
+//         );
+//     }
+// }
+
+// export default SideBar;
+
+
+const SideBar = (props) => {
+    return (
+        <SideBarStyle>
+            <UserInfo>
+                <img src={props.userImage} />
+                <h1>{props.user}</h1>
+                <p>@{props.userName}</p>
+            </UserInfo>
+            <ListsStyle>
+                <h1>COLLECTIONS</h1>
+                {props.userCollections.map(collection => {
+                    return (
+                        <div key={collection.id} _id={collection.id}>
+                            <h3>{collection.title}</h3>
+                            <h1>Moods</h1>
+                        </div>
+                    )})}
+            </ListsStyle>
+                 <ButtonStyle>
+                     <button>Visual Artists</button>
+                     <button>Audio Artists</button>
+                 </ButtonStyle>
+        </SideBarStyle>
+    );
+};
 
 export default SideBar;

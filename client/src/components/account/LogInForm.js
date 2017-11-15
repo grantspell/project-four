@@ -23,12 +23,14 @@ class LogInForm extends Component {
         return (
             <div>
                 <h1>Existing Users</h1>
-                {this.state.users.map(user => (
+                {this.state.users.map(user => {
+                    return (
                     <div key={user.username}>
                         <h3>Name: <Link to={`/workspace/${user.username}`} >{user.name}</Link></h3>
                         <p>Username: {user.username}</p>
                     </div>
-                ))}
+                    )}
+                )}
             </div>
         );
     }

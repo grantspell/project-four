@@ -7,7 +7,11 @@ class Api::CollectionsController < ApplicationController
     end
 
     def show
-        
+        user_id = params[:user_id]
+
+        @collections = Collection.where(user_id: user_id)
+
+        render json: @collections
     end
     
 end

@@ -27,11 +27,13 @@ class UserAccount extends Component {
     }
     
     deleteUser = async (userId) => {
-        const user_id = this.state.user.id
-        console.log(user_id)
-        const res = await axios.delete(`/api/users/${user_id}`)
-        await this.setState({ user: res.data })
-        this.setState({ redirectToWorkspace: true })        
+        const id = userId
+        console.log(userId)
+        const res = await axios.delete(`/api/users/${userId}`)
+        this.setState({
+            user:res.data,
+            redirectToHome:true,
+        })       
     }
 
     // Create a Patch for User
@@ -57,7 +59,7 @@ class UserAccount extends Component {
     render() {
 
         if (this.state.redirectToHome) {
-            return <Redirect to={`/`} />
+            return <Redirect to={`/account`} />
         }
         
         return (
@@ -72,9 +74,6 @@ class UserAccount extends Component {
                     updateUser={this.updateUser}
                     deleteUser={this.deleteUser}
                 />
-                <div>
-                    <button onClick={this.deleteUser}>Delete Account</button>
-                </div>
             </div>
         );
     }

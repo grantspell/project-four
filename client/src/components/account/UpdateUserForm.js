@@ -19,6 +19,10 @@ const UpdateWrapper = styled.div`
 
 const UpdateUserForm = (props) => {
 
+    const deleteUser = () => {
+        props.deleteUser(props.userId)
+    }
+
     const handleChange = (event) => {
         props.handleChange(event, props.userId)
     }
@@ -40,6 +44,9 @@ const UpdateUserForm = (props) => {
             <div>
                 <label htmlFor="name">Password</label>
                 <input onBlur={updateUser} onChange={handleChange} type="password" name="password" value={props.password} />
+            </div>
+            <div>
+                <button onClick={deleteUser}>Delete Account</button>
             </div>
         </UpdateWrapper>
     );

@@ -36,11 +36,11 @@ class Api::UsersController < ApplicationController
     end
 
     def destroy
-        username = params[:username]
+        id = params[:id]
 
-        @user_id = User.find_by_username(username).id
-
-        @user_id.destroy
+        @user = User.find_by_id(id)
+        
+        @user.destroy
 
         render json: {
             msg: "User Successfully Deleted!"

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 
@@ -46,7 +47,7 @@ class ArtistsIndex extends Component {
                             <h1>{artist.name}</h1>
                             <h3>Type: {artist.artist_type}</h3>
                             <p>{artist.description}</p>
-                            <button>Artistry</button>
+                            <button><Link to={`/library/${artist.id}`}>Artistry</Link></button>
                         </ArtistsWrapper>
                     )
                 })}

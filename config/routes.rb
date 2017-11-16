@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   
   namespace :api do
     get "/artists", to: "artists#index", as: "artists"
+    get "/artists/:id", to: "artists#show", as: "artist"
+    get "/artists/:artist_id/artistry", to: "artists#artistry", as: "artistry"
   end
 
 end

@@ -9,6 +9,7 @@ import AccountView from './components/account/AccountView.js'
 import UserAccount from './components/account/UserAccount.js'
 import WorkspaceView from './components/workspace/WorkspaceView.js'
 import LibraryView from './components/library/LibraryView.js'
+import Artist from './components/library/Artist.js'
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/account/:username" component={UserAccount} />
           <Route path="/workspace/:username" component={WorkspaceView} />
           <Route exact path="/library" component={LibraryView} />
+          <Route exact path="/library/:artist_id" component={Artist} />
         </Switch>
         </div>
       </Router>

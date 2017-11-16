@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ArtistWork extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        );
-    }
-}
+const ArtistWork = (props) => {
+    return (
+        <div>
+            {props.artistId}
+            {props.artistry}
+        </div>
+    );
+};
 
 export default ArtistWork;

@@ -1,4 +1,4 @@
 class Artist < ApplicationRecord
-    has_many :audios
-    has_many :visuals
+    has_many :audios, :dependent => :destroy
+    has_many :visuals, :dependent => :destroy
 end

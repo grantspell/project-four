@@ -25,9 +25,10 @@ class Api::UsersController < ApplicationController
     end
 
     def update
-        user_id = params[:id]
 
-        @user = User.find_by_id(user_id)
+        id = params[:id]
+
+        @user = User.find_by_id(id)
 
         @user.update_attributes(user_params)
 
@@ -35,11 +36,11 @@ class Api::UsersController < ApplicationController
     end
 
     def destroy
-        user_id = params[:id]
+        username = params[:username]
 
-        @user = User.find_by_id(user_id)
+        @user_id = User.find_by_username(username).id
 
-        @user.destroy
+        @user_id.destroy
 
         render json: {
             msg: "User Successfully Deleted!"

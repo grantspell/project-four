@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // STYLES
@@ -88,8 +89,8 @@ const SideBar = (props) => {
                     )})}
             </ListsStyle>
                  <ButtonStyle>
-                     <button>Visual Artists</button>
-                     <button>Audio Artists</button>
+                     <button><Link to="/library">Artists Library</Link></button>
+                     <button><Link to={`/account/${props.userName}`}>Account</Link></button>
                  </ButtonStyle>
         </SideBarStyle>
     );

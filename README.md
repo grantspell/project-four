@@ -47,3 +47,5 @@ My application's concept is to provide art enthusiasts with a workspace to creat
 * Add art pieces directly from the `library` page using a drop down menu to select collection
 
 * Integrate Devise for usre Authentication / Authorization
+
+* Integrate search capability for user to search APIs to add their own artists of both variations

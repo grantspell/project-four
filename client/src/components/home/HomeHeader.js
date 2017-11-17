@@ -10,9 +10,9 @@ const HeaderStyles = styled.div`
 `
 const Logo = styled.div`
     flex: 1;
-    margin-left: 10px;
-    color: #0041D8;
-    text-shadow: -1px -1px 0px white;
+    margin-left: 15px;
+    color: black;
+    text-shadow: -2px 2px 0px yellow;
     font-family: 'Barlow Semi Condensed', sans-serif;
 `
 const ButtonOne = styled.div`

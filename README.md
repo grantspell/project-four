@@ -41,3 +41,9 @@ My application's concept is to provide art enthusiasts with a workspace to creat
 * Update HomePage to render `published` collections as examples
 
 * Collections buttons to switch to coresponding collection in the collection state
+
+* Adding navigational buttons between pages
+
+* Add art pieces directly from the `library` page using a drop down menu to select collection
+
+* Integrate Devise for usre Authentication / Authorization

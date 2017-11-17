@@ -6,6 +6,8 @@
 
 ## Planning
 
+Dilettante : Exploring Art Fusion
+
 My application's concept is to provide art enthusiasts with a workspace to create mood boards as collections where they can choose a visual piece by an artist, attach an audio file to the collection and write a brief summary explaining their thoughts, feelings, inspiration, etc. from and about the collection.
 
 ### Trello Board
@@ -22,7 +24,7 @@ My application's concept is to provide art enthusiasts with a workspace to creat
 
 ## TECHNOLOGIES
 
-* DataBase : PSQL
+* DataBase : PostgreSQL
 
 * External API : ![iTunes Search API ](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
 

@@ -60,8 +60,8 @@ class ArtistWork extends Component {
                     if(art.song == !undefined){
                         return (
                             <div className="visualArt" key={art.id} _id={art.id}>
-                                {art.title}
-                                {art.visual_url}
+                                <h1>{art.title}</h1>
+                                <img src={art.visual_url} />
                             </div>
                         )} else {
                             return (
@@ -74,7 +74,7 @@ class ArtistWork extends Component {
                                         <p><span>Track:</span> {art.trackName}</p>
                                         <p><span>Album:</span> {art.collectionName}</p>
                                     </AudioText>
-                                    <audio controls autoplay loop>
+                                    <audio controls loop>
                                         <source src={art.previewUrl} type="audio/wav" />
                                     </audio>
                                 </AudioStyle>

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 // STYLES
 const Wrapper = styled.div`
     background-image: url(https://i.imgur.com/d9vRi9b.png);
+    background-size: 130% 130%;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     justify-content: space-around;

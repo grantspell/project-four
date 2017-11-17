@@ -32,7 +32,7 @@ const Collection = (props) => {
             </VisualContent>
 
             <AudioContent>
-                <audio controls autoPlay
+                <audio controls autoPlay loop
                     src={props.collectionA}
                 />
             </AudioContent>

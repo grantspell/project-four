@@ -16,10 +16,10 @@ const Logo = styled.div`
     font-family: 'Barlow Semi Condensed', sans-serif;
 `
 const ButtonOne = styled.div`
-    margin-right: 10px;
+    margin-right: 15px;
 `
 const ButtonTwo = styled.div`
-    margin-right: 10px;
+    margin-right: 15px;
 `
 
 class HomeHeader extends Component {

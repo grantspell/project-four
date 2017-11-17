@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 // STYLES
 const SideBarStyle = styled.div`
+    font-family: 'Barlow Semi Condensed', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,6 +30,10 @@ const UserInfo = styled.div`
     }
 `
 const ListsStyle = styled.div`
+h1 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    
+}
 
 `
 const ButtonStyle = styled.div`
@@ -37,41 +42,6 @@ const ButtonStyle = styled.div`
     }
 
 `
-
-// class SideBar extends Component {
-//     render() {
-//         return (
-//             <SideBarStyle>
-//                 <UserInfo>
-//                     <img src="https://www.arabiaweddings.com/sites/default/files/news/2014/06/anna.jpg" />
-//                     <h1>Anna Wintour</h1>
-//                     <p>@VogueWintour</p>
-//                 </UserInfo>
-//                 <ListsStyle>
-//                     <h1>COLLECTIONS</h1>
-//                     <ul>
-//                         <li>ETHEREAL</li>
-//                         <li>SUNDOWNING AGAIN</li>
-//                         <li>REFILL</li>
-//                     </ul>
-//                     <h1>MOODS</h1>
-//                     <ul>
-//                         <li>ALMOST HAPPY</li>
-//                         <li>ANXIOUS</li>
-//                         <li>LUMINOUS</li>
-//                     </ul>
-//                 </ListsStyle>
-//                 <ButtonStyle>
-//                     <button>Visual Artists</button>
-//                     <button>Audio Artists</button>
-//                 </ButtonStyle>
-//             </SideBarStyle>
-//         );
-//     }
-// }
-
-// export default SideBar;
-
 
 const SideBar = (props) => {
 
@@ -96,14 +66,7 @@ const SideBar = (props) => {
                             </button></li>
                         </div>
                     )})}
-                    {/* {props.moodKeywords.map(keyword => {
-                    <h1>MOOD</h1>
-                        return(
-                        <div key={keyword.id} _id={keyword.id}>
-                            <li>{keyword}</li>
-                        </div>
-                        )
-                    })} */}
+
             </ListsStyle>
                  <ButtonStyle>
                      <button><Link to="/library">Artists Library</Link></button>

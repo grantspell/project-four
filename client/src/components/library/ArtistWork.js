@@ -15,6 +15,7 @@ const AudioStyle = styled.div`
     justify-content: space-around;
     align-items: center;
     border: 5px double yellow;
+    margin: 10px;
     padding: 15px;
 `
 const Image = styled.div`

@@ -13,6 +13,7 @@ const Logo = styled.div`
     margin-left: 10px;
     color: #0041D8;
     text-shadow: -1px -1px 0px white;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 `
 const ButtonOne = styled.div`
     margin-right: 10px;
@@ -27,7 +28,7 @@ class HomeHeader extends Component {
             <HeaderStyles>
                 
                 <Logo>
-                    <h1>Dilettante</h1>
+                    <h1>DILETTANTE</h1>
                 </Logo>
                 
                 <ButtonOne>

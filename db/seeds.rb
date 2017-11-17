@@ -15,9 +15,13 @@ AnnaWintour = User.create!({ name: "Anna Wintour", username: "VogueWintour", pas
 
 # COLLECTIONS
 Ethereal = Collection.create!({ title: "Ethereal", mood_keywords: ['ethereal', 'inspired', 'happy'], publish_status: false, user_id: BobRoss.id })
+UpToYou = Collection.create!({ title: "Up To You, Now", mood_keywords: ['relief', 'tired'], publish_status: false, user_id: AnnaWintour.id })
+Wild = Collection.create!({ title: "Wild", mood_keywords: ['party', 'fun', 'heady'], publish_status: false, user_id: AnnaWintour.id })
 
 # ENTRIES
 Entry.create!({ title: "Finding Inspiration In The Stars", content: "Here I am searching the night sky for shooting stars through my kaleidescope. Listening to St. Vincent and studying Dalí's mind-bending work. Life is good.", collection_id: Ethereal.id })
+Entry.create!({ title: "Oh To Be The Real Thing", content: "Every single light, fading for the dark. Oh prediculation, feel the titilation. Know feel real.", collection_id: UpToYou.id })
+Entry.create!({ title: "Oh To Be The Real Thing", content: "Every single light, fading for the dark. Oh prediculation, feel the titilation. Know feel real.", collection_id: Wild.id })
 
 # A ARTISTS
 StVincent = Artist.create!({ name: "St. Vincent", artist_type: "audio", description: "Anne Erin 'Annie' Clark (born September 28, 1982),[5][6] better known by her stage name St. Vincent, is an American musician, singer-songwriter, and multi-instrumentalist. After studying at Berklee College of Music for three years, she began her music career as a member of the Polyphonic Spree. Clark was also a member of Sufjan Stevens's touring band before forming her own band in 2006.", artist_image: "https://pbs.twimg.com/profile_images/917819850625617926/6Vs1Ae6B.jpg" })
@@ -32,6 +36,10 @@ KeithHaring = Artist.create!({ name: "Keith Haring", artist_type: "visual", desc
 
 # VISUALS
 Visual.create!({ title: "The Burning Giraffe", visual_url: "https://learnodo-newtonic.com/wp-content/uploads/2017/02/The-Burning-Giraffe-1937-Salvador-Dali.jpg", artist_id: SalvadorDali.id, collection_id: Ethereal.id })
+Visual.create!({ title: "The Burning Giraffe", visual_url: "https://learnodo-newtonic.com/wp-content/uploads/2017/02/The-Burning-Giraffe-1937-Salvador-Dali.jpg", artist_id: SalvadorDali.id, collection_id: UpToYou.id })
+Visual.create!({ title: "The Burning Giraffe", visual_url: "https://learnodo-newtonic.com/wp-content/uploads/2017/02/The-Burning-Giraffe-1937-Salvador-Dali.jpg", artist_id: SalvadorDali.id, collection_id: Wild.id })
 
 # AUDIOS
 Audio.create!({ trackName: "Dilettante", collectionName: "Strange Mercy", artistName: "St. Vincent", artworkUrl100: "http://is2.mzstatic.com/image/thumb/Music/v4/04/7b/b0/047bb06c-ce0f-b159-aa1a-e4a07c0c02b5/source/100x100bb.jpg",previewUrl: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview71/v4/10/63/41/10634134-411d-d1c4-7427-4299a7623090/mzaf_3827557030517517515.plus.aac.p.m4a", artist_id: StVincent.id, collection_id: Ethereal.id })
+Audio.create!({ trackName: "Lying Has To Stop", collectionName: "Soft Hair", artistName: "Soft Hair", artworkUrl100: "http://is4.mzstatic.com/image/thumb/Music62/v4/5c/a4/ab/5ca4abf3-85f7-07c5-23dd-4f7481e1c60f/source/100x100bb.jpg", previewUrl: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview42/v4/7b/2d/d8/7b2dd89e-1336-780e-4376-e671de98d013/mzaf_4259663038635372964.plus.aac.p.m4a", artist_id: SoftHair.id, collection_id: UpToYou.id })
+Audio.create!({ trackName: "Relaxed Lizard", collectionName: "Soft Hair", artistName: "Soft Hair", artworkUrl100: "http://is4.mzstatic.com/image/thumb/Music62/v4/5c/a4/ab/5ca4abf3-85f7-07c5-23dd-4f7481e1c60f/source/100x100bb.jpg", previewUrl: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview62/v4/a8/25/ae/a825ae23-d783-5505-0e2a-b891cf8bcf11/mzaf_3055768545459745060.plus.aac.p.m4a", artist_id: SoftHair.id, collection_id: Wild.id })

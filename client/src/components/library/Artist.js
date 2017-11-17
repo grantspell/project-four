@@ -11,6 +11,26 @@ const ArtistInfo = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    height: 100vh;
+
+    img {
+        height: 400px;
+        margin: 30px;
+        border-radius: 100%;
+        border: 15px double pink;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 13px;
+        margin: 0px 250px 0px 250px;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+    
 `
 
 class Artist extends Component {

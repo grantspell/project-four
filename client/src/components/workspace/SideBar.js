@@ -32,6 +32,9 @@ const ListsStyle = styled.div`
 
 `
 const ButtonStyle = styled.div`
+    button {
+        margin: 5px;
+    }
 
 `
 
@@ -71,6 +74,11 @@ const ButtonStyle = styled.div`
 
 
 const SideBar = (props) => {
+
+    const setWorkingCollection = (event) => {
+        props.setWorkingCollection(event, props.collection_id)
+    }
+    
     return (
         <SideBarStyle>
             <UserInfo>
@@ -83,10 +91,19 @@ const SideBar = (props) => {
                 {props.userCollections.map(collection => {
                     return (
                         <div key={collection.id} _id={collection.id}>
-                            <h3>{collection.title}</h3>
-                            <h1>Moods</h1>
+                            <li><button onClick={this.setWorkingCollection}>
+                                {collection.title}
+                            </button></li>
                         </div>
                     )})}
+                    {/* {props.moodKeywords.map(keyword => {
+                    <h1>MOOD</h1>
+                        return(
+                        <div key={keyword.id} _id={keyword.id}>
+                            <li>{keyword}</li>
+                        </div>
+                        )
+                    })} */}
             </ListsStyle>
                  <ButtonStyle>
                      <button><Link to="/library">Artists Library</Link></button>

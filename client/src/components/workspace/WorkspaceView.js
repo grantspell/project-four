@@ -9,7 +9,7 @@ import Collection from './Collection.js'
 // STYLES
 const WorkspaceWrapper = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
 `
 
@@ -21,7 +21,11 @@ class WorkspaceView extends Component {
             username: '',
             user_image: ''
         },
-        userCollections: []
+        userCollections: [],
+        workingCollection: {},
+        visuals: [],
+        audio: [],
+        entries: []
     }
 
     componentWillMount() {
@@ -46,8 +50,31 @@ class WorkspaceView extends Component {
 
         const res = await axios.get(`/api/collections/${userId}`)
         await this.setState({ userCollections: res.data })
-
         console.log(res)
+
+        this.setWorkingCollection()
+    }
+
+    setWorkingCollection = async () => {
+        await this.setState({ workingCollection: this.state.userCollections[0] })
+        console.log(this.state.workingCollection)
+
+        this.getVisualAndAudio()
+    }
+
+    getVisualAndAudio = async () => {
+        const collectionId = this.state.workingCollection.id
+
+        const visual = await axios.get(`/api/content/${collectionId}/v`)
+        this.setState({ visuals: visual.data})
+
+        const audio = await axios.get(`/api/content/${collectionId}/a`)
+        this.setState({ audio: audio.data })
+
+        const entry = await axios.get(`/api/content/${collectionId}/e`)
+        this.setState({ entries: entry.data })
+
+        console.log(this.state)
     }
 
     render() {
@@ -58,9 +85,27 @@ class WorkspaceView extends Component {
                 user={this.state.user.name}
                 userName={this.state.user.username}
                 userImage={this.state.user.user_image}
-                userCollections={this.state.userCollections} 
+                userCollections={this.state.userCollections}
+                // moodKeywords={this.state.userCollections.mood_keywords} 
                 />
-                <Collection />
+
+                <Collection
+                user={this.state.user.name}
+                userId={this.state.user.id}
+                userName={this.state.user.username}
+                collectionId={this.state.workingCollection.id}
+                collectionName={this.state.workingCollection.title}
+                collectionV={this.state.visuals.map(visual => {
+                    return visual.visual_url
+                })}
+                collectionA={this.state.audio.map(audio => {
+                    return audio.previewUrl
+                })}
+                collectionE={this.state.entries.map(entry => {
+                    return entry.content
+                })}
+                />
+
             </WorkspaceWrapper>
         );
     }

@@ -27,5 +27,13 @@ class Api::ArtistsController < ApplicationController
 
         render json: @artistry
     end
+
+    def show_song
+        artistId = params[:artist_id]
+
+        @artistSong = Audio.where(artist_id: artistId).first.previewUrl
+
+        render json: @artistSong
+    end
     
 end

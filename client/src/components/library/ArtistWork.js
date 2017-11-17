@@ -1,18 +1,3 @@
-// import React from 'react';
-
-// const ArtistWork = (props) => {
-//     return (
-//         <div>
-//             {props.artistId}
-//             {/* {props.artistry.map(piece => {
-//                 {piece.song}
-//             })} */}
-//         </div>
-//     );
-// };
-
-// export default ArtistWork;
-
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -21,6 +6,27 @@ import styled from 'styled-components';
 import Artist from './Artist'
 
 // STYLES
+const ArtWrapper = styled.div`
+    margin: 50px;
+`
+const AudioStyle = styled.div`
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 5px double yellow;
+    padding: 15px;
+`
+const Image = styled.div`
+    float: left;
+`
+const AudioText = styled.div`
+    float: right;
+
+    span {
+        font-weight: bold;
+    }
+`
 
 class ArtistWork extends Component {
 
@@ -47,8 +53,7 @@ class ArtistWork extends Component {
 
     render() {
         return (
-            <div>
-                {this.state.artistId}
+            <ArtWrapper>
                 {this.state.artistry.map(art => {
 
                     if(art.song == !undefined){
@@ -59,18 +64,22 @@ class ArtistWork extends Component {
                             </div>
                         )} else {
                             return (
-                                <div className="audioArt" key={art.id} _id={art.id}>
-                                    {art.artistName}
-                                    {art.trackName}
-                                    {art.collectionName}
+                                <AudioStyle className="audioArt" key={art.id} _id={art.id}>
+                                    <Image>
                                     <img src={art.artworkUrl100} />
+                                    </Image>
+                                    <AudioText>
+                                        <p><span>Artist:</span> {art.artistName}</p>
+                                        <p><span>Track:</span> {art.trackName}</p>
+                                        <p><span>Album:</span> {art.collectionName}</p>
+                                    </AudioText>
                                     <audio controls autoplay loop>
                                         <source src={art.previewUrl} type="audio/wav" />
                                     </audio>
-                                </div>
+                                </AudioStyle>
                         )}
                 })}
-            </div>
+            </ArtWrapper>
         );
     }
 }

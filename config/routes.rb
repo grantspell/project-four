@@ -11,13 +11,21 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "/collections", to: "collections#index", as: "collections"
-    get "/collections/:user_id", to: "collections#show"
+    get "/collections/:user_id", to: "collections#userCollections"
+    get "/collections/:user_id/:collection_id", to: "collections#show", as: "collection"
+  end
+
+  namespace :api do
+    get "/content/:collection_id/v", to: "contents#visual", as: "visuals"
+    get "content/:collection_id/a", to: "contents#audio", as: "audios"
+    get "content/:collection_id/e", to: "contents#entry", as: "entries"
   end
   
   namespace :api do
     get "/artists", to: "artists#index", as: "artists"
     get "/artists/:id", to: "artists#show", as: "artist"
     get "/artists/:artist_id/artistry", to: "artists#artistry", as: "artistry"
+    get "/artists/:artist_id/song", to: "artists#show_song", as: "song"
   end
 
 end

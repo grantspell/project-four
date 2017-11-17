@@ -14,10 +14,10 @@ BobRoss = User.create({ name: "Bob Ross", username: "HeWhoPaints", password: "ha
 AnnaWintour = User.create({ name: "Anna Wintour", username: "VogueWintour", password: "oversizedSunglasses", user_image: "https://www.arabiaweddings.com/sites/default/files/news/2014/06/anna.jpg" })
 
 # COLLECTIONS
-Collection.create({ title: "Ethereal", mood_keywords: ['ethereal', 'inspired', 'happy'], publish_status: false, user_id: BobRoss.id })
+Ethereal = Collection.create!({ title: "Ethereal", mood_keywords: ['ethereal', 'inspired', 'happy'], publish_status: false, user_id: BobRoss.id })
 
 # ENTRIES
-Entry.create({ title: "Finding Inspiration In The Stars", content: "Here I am searching the night sky for shooting stars through my kaleidescope. Listening to St. Vincent and studying Dalí's mind-bending work. Life is good.", collection_id: 1 })
+Entry.create!({ title: "Finding Inspiration In The Stars", content: "Here I am searching the night sky for shooting stars through my kaleidescope. Listening to St. Vincent and studying Dalí's mind-bending work. Life is good.", collection_id: Ethereal.id })
 
 # A ARTISTS
 StVincent = Artist.create({ name: "St. Vincent", artist_type: "audio", description: "Anne Erin 'Annie' Clark (born September 28, 1982),[5][6] better known by her stage name St. Vincent, is an American musician, singer-songwriter, and multi-instrumentalist. After studying at Berklee College of Music for three years, she began her music career as a member of the Polyphonic Spree. Clark was also a member of Sufjan Stevens's touring band before forming her own band in 2006.", artist_image: "https://pbs.twimg.com/profile_images/917819850625617926/6Vs1Ae6B.jpg" })
@@ -30,7 +30,7 @@ FridaKahlo = Artist.create({ name: "Frida Kahlo", artist_type: "visual", descrip
 KeithHaring = Artist.create({ name: "Keith Haring", artist_type: "visual", description: "Transcendent.", artist_image: "https://i.imgur.com/zvpybrm.jpg" })
 
 # VISUALS
-Visual.create({ title: "The Burning Giraffe", visual_url: "https://learnodo-newtonic.com/wp-content/uploads/2017/02/The-Burning-Giraffe-1937-Salvador-Dali.jpg", artist_id: SalvadorDali.id, collection_id: 1 })
+Visual.create!({ title: "The Burning Giraffe", visual_url: "https://learnodo-newtonic.com/wp-content/uploads/2017/02/The-Burning-Giraffe-1937-Salvador-Dali.jpg", artist_id: SalvadorDali.id, collection_id: Ethereal.id })
 
 # AUDIOS
-Audio.create({ song: "Dilettante", album: "Strange Mercy", audio_url: "https://www.youtube.com/watch?v=894MYqeAzIo", artist_id: StVincent.id, collection_id: 1 })
+Audio.create!({ song: "Dilettante", album: "Strange Mercy", audio_url: "https://www.youtube.com/watch?v=894MYqeAzIo", artist_id: StVincent.id, collection_id: Ethereal.id })

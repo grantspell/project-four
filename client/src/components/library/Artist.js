@@ -22,39 +22,30 @@ class Artist extends Component {
             artist_type: '',
             description: ''
         },
-        artistry: []
+        artistId: 0,
     }
 
     componentWillMount = async () => {
         const { artist_id } = this.props.match.params
-        console.log(artist_id)
+        this.setState({ artistId: artist_id })
+
         const res = await axios.get(`/api/artists/${artist_id}`)
         this.setState({ artist: res.data })
 
-        this.getArtistry()
+        console.log(this.state.artist.artist_type)
     }
 
-    getArtistry = async () => {
-        const artistId = this.state.artist.id
-        console.log(artistId)
-
-        const res = await axios.get(`/api/artists/${artistId}/artistry`)
-        this.setState({ artistry: res.data })
-        console.log(this.state.artistry)
-    }
-    
     render() {
         return (
             <div>
                 <ArtistInfo>
-                <img src={this.state.artist.artist_image} />
-                <h1>{this.state.artist.name}</h1>
-                <p>{this.state.artist.description}</p>
+                    <img src={this.state.artist.artist_image} />
+                    <h1>{this.state.artist.name}</h1>
+                    <p>{this.state.artist.description}</p>
                 </ArtistInfo>
 
                 <ArtistWork
-                    artistId={this.state.artist.id}
-                    artistry={this.state.artistry}
+                    artist_id={this.state.artistId}
                 />
 
             </div>
@@ -63,3 +54,28 @@ class Artist extends Component {
 }
 
 export default Artist;
+
+
+                        // parseArtistry = async () => {
+                        //     const artistry = this.state.artistry
+                        //     const artistType = this.state.artist_type
+
+                        //     if (artistType == 'visual') {
+                        //         return (
+                        //         artistry.map(art => {
+                        //             {art.title}
+                        //             {art.visual_url}
+                        //             {art.collection_id}
+                        //             {art.artist_id}
+                        //         }))
+                        //     } else {
+                        //         return (
+                        //         artistry.map(art => {
+                        //             {art.song}
+                        //             {art.album}
+                        //             {art.audio_url}
+                        //             {art.collection_id}
+                        //             {art.artist_id}
+                        //         }))
+                        //     }
+                        // }

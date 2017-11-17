@@ -24,6 +24,8 @@ My application's concept is to provide art enthusiasts with a workspace to creat
 
 ## TECHNOLOGIES
 
+* Programming Language : React on Rails
+
 * DataBase : PostgreSQL
 
 * External API : ![iTunes Search API ](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)

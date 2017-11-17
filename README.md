@@ -32,4 +32,12 @@ My application's concept is to provide art enthusiasts with a workspace to creat
 
 ## CITATIONS
 
-## 
+## FUTURE IMPROVEMENTS
+
+* Add gemfile to allow users to upload profile images
+
+* Update Styling and Color Palette | Minimalistic
+
+* Update HomePage to render `published` collections as examples
+
+* Collections buttons to switch to coresponding collection in the collection state

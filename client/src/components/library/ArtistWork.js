@@ -64,7 +64,7 @@ class ArtistWork extends Component {
                                     {art.trackName}
                                     {art.collectionName}
                                     <img src={art.artworkUrl100} />
-                                    <audio controls="controls">
+                                    <audio controls autoplay loop>
                                         <source src={art.previewUrl} type="audio/wav" />
                                     </audio>
                                 </div>

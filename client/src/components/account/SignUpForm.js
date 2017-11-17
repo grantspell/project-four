@@ -24,6 +24,10 @@ const FormStyle = styled.div`
 
     }
 `
+const AllWrapper = styled.div`
+    border: 10px double pink;
+    padding: 50px;
+`
 
 class SignUpForm extends Component {
 
@@ -60,7 +64,7 @@ class SignUpForm extends Component {
         }
         
         return (
-            <div>
+            <AllWrapper>
                 <h1>SignUp Form</h1>
 
                 <form onSubmit={this.handleSubmit}>
@@ -95,7 +99,7 @@ class SignUpForm extends Component {
                 </FormStyle>
                 </form>
 
-            </div>
+            </AllWrapper>
         );
     }
 }

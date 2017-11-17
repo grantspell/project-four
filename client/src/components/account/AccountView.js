@@ -10,7 +10,8 @@ import SignUp from './SignUp'
 const AccountWrapper = styled.div`
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-content: center;
+    margin-top: 50px;
 `
 
 class AccountView extends Component {

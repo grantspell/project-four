@@ -12,10 +12,12 @@ const CollectionWrapper = styled.div`
     width: 75vw;
 `
 const VisualContent = styled.div`
-
+    img {
+        border: 10px double pink;
+    }
 `
 const AudioContent = styled.div`
-
+    
 `
 const EntryContent = styled.div`
 
@@ -25,7 +27,6 @@ const Collection = (props) => {
     return (
         <CollectionWrapper>
             <VisualContent>
-                <img src={props.workingCollection} />
                 <h1>{props.collectionName}</h1>
                 <img src={props.collectionV} />
             </VisualContent>

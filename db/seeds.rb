@@ -33,4 +33,4 @@ KeithHaring = Artist.create({ name: "Keith Haring", artist_type: "visual", descr
 Visual.create!({ title: "The Burning Giraffe", visual_url: "https://learnodo-newtonic.com/wp-content/uploads/2017/02/The-Burning-Giraffe-1937-Salvador-Dali.jpg", artist_id: SalvadorDali.id, collection_id: Ethereal.id })
 
 # AUDIOS
-Audio.create!({ song: "Dilettante", album: "Strange Mercy", audio_url: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview71/v4/10/63/41/10634134-411d-d1c4-7427-4299a7623090/mzaf_3827557030517517515.plus.aac.p.m4a", artist_id: StVincent.id, collection_id: Ethereal.id })
+Audio.create!({ trackName: "Dilettante", collectionName: "Strange Mercy", artistName: "St. Vincent", artworkUrl100: "http://is2.mzstatic.com/image/thumb/Music/v4/04/7b/b0/047bb06c-ce0f-b159-aa1a-e4a07c0c02b5/source/100x100bb.jpg",previewUrl: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview71/v4/10/63/41/10634134-411d-d1c4-7427-4299a7623090/mzaf_3827557030517517515.plus.aac.p.m4a", artist_id: StVincent.id, collection_id: Ethereal.id })

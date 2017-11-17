@@ -60,10 +60,12 @@ class ArtistWork extends Component {
                         )} else {
                             return (
                                 <div className="audioArt" key={art.id} _id={art.id}>
-                                    {art.song}
-                                    {art.album}
+                                    {art.artistName}
+                                    {art.trackName}
+                                    {art.collectionName}
+                                    <img src={art.artworkUrl100} />
                                     <audio controls="controls">
-                                        <source src={art.audio_url} type="audio/wav" />
+                                        <source src={art.previewUrl} type="audio/wav" />
                                     </audio>
                                 </div>
                         )}

@@ -28,6 +28,9 @@ const UserInfo = styled.div`
         border-radius: 100%;
         box-shadow: 5px 5px 0px yellow, -5px -5px 0px red;
     }
+    h1 {
+        margin-top: 30px;
+    }
 `
 const ListsStyle = styled.div`
 h1 {

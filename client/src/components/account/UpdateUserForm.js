@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // STYLES
 const UpdateWrapper = styled.div`
     display: inline-flex;
     flex-direction: column;
+    justify-content: space-around;
     margin: 10px;
 
     label{
@@ -14,6 +16,15 @@ const UpdateWrapper = styled.div`
 
     input{
         float: right;
+    }
+    .buttonLogOut {
+        text-decoration: none;
+        margin-top: 10px;
+        float: left;
+    }
+    .buttonDelete {
+        float:right;
+        margin-top: 10px;
     }
 `
 
@@ -45,7 +56,10 @@ const UpdateUserForm = (props) => {
                 <label htmlFor="name">Password</label>
                 <input onBlur={updateUser} onChange={handleChange} type="password" name="password" value={props.password} />
             </div>
-            <div>
+            <div className="buttonLogOut">
+                <button><Link to="/account">Log Out</Link></button>
+            </div>
+            <div className="buttonDelete">
                 <button onClick={deleteUser}>Delete Account</button>
             </div>
         </UpdateWrapper>

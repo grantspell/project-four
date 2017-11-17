@@ -28,6 +28,6 @@ My application's concept is to provide art enthusiasts with a workspace to creat
 
 * DataBase : PostgreSQL
 
-* External API : ![iTunes Search API ](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
+* External API : [iTunes Search API ](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
 
 ## CITATIONS

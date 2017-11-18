@@ -15,8 +15,8 @@ AnneWintour = User.create!({ name: "Anne Wintour", username: "VogueWintour", pas
 
 # COLLECTIONS
 Ethereal = Collection.create!({ title: "Ethereal", mood_keywords: ['ethereal', 'inspired', 'happy'], publish_status: false, user_id: BobRoss.id })
-UpToYou = Collection.create!({ title: "Up To You, Now", mood_keywords: ['relief', 'tired'], publish_status: false, user_id: AnnaWintour.id })
-Wild = Collection.create!({ title: "Wild", mood_keywords: ['party', 'fun', 'heady'], publish_status: false, user_id: AnnaWintour.id })
+UpToYou = Collection.create!({ title: "Up To You, Now", mood_keywords: ['relief', 'tired'], publish_status: false, user_id: AnneWintour.id })
+Wild = Collection.create!({ title: "Wild", mood_keywords: ['party', 'fun', 'heady'], publish_status: false, user_id: AnneWintour.id })
 
 # ENTRIES
 Entry.create!({ title: "Finding Inspiration In The Stars", content: "Here I am searching the night sky for shooting stars through my kaleidescope. Listening to St. Vincent and studying Dalí's mind-bending work. Life is good.", collection_id: Ethereal.id })

@@ -86,7 +86,6 @@ class WorkspaceView extends Component {
                 userName={this.state.user.username}
                 userImage={this.state.user.user_image}
                 userCollections={this.state.userCollections}
-                // moodKeywords={this.state.userCollections.mood_keywords} 
                 />
 
                 <Collection

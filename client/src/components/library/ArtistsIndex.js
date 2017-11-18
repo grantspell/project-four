@@ -72,7 +72,7 @@ class ArtistsIndex extends Component {
 
     imgMusic = async (e) => {
         e.preventDefault()
-        
+
         const artistId = e.target.name
         console.log(artistId)
 
@@ -121,7 +121,7 @@ class ArtistsIndex extends Component {
                         )
                     }
                 })}
-                <embed src={this.state.song} autoPlay="true" loop="false" hidden="true" type="audio/x-m4a"></embed>
+                <embed src={this.state.song} autoPlay="true" loop="true" hidden="true" type="audio/x-m4a"></embed>
             </ArtistsWrapper>
         );
     }

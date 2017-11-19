@@ -11,15 +11,15 @@ Artist.destroy_all
 
 # USERS
 BobRoss = User.create!({ name: "Bob Ross", username: "HeWhoPaints", password: "happyLittleTrees", user_image: "https://static-cdn.jtvnw.net/jtv_user_pictures/panel-105458682-image-30bb3ea9145a9b30-320-320.jpeg?imenable=1&impolicy=panel-images&imwidth=320" })
-AnneWintour = User.create!({ name: "Anne Wintour", username: "VogueWintour", password: "oversizedSunglasses", user_image: "https://www.arabiaweddings.com/sites/default/files/news/2014/06/anna.jpg" })
+AnnaWintour = User.create!({ name: "Anna Wintour", username: "VogueWintour", password: "oversizedSunglasses", user_image: "https://www.arabiaweddings.com/sites/default/files/news/2014/06/anna.jpg" })
 
 # COLLECTIONS
 Ethereal = Collection.create!({ title: "Ethereal", mood_keywords: ['ethereal', 'inspired', 'happy'], publish_status: false, user_id: BobRoss.id })
-UpToYou = Collection.create!({ title: "Up To You, Now", mood_keywords: ['relief', 'tired'], publish_status: false, user_id: AnneWintour.id })
-Wild = Collection.create!({ title: "Wild", mood_keywords: ['party', 'fun', 'heady'], publish_status: false, user_id: AnneWintour.id })
-BreakFree = Collection.create!({ title: "Break Free", mood_keywords: ['fly like an eagle'], publish_status: false, user_id: AnneWintour.id })
-UpAllNight = Collection.create!({ title: "Up All Night", mood_keywords: ['restless'], publish_status: false, user_id: AnneWintour.id })
-Hot = Collection.create!({ title: "HOT", mood_keywords: ['hot', 'going out'], publish_status: false, user_id: AnneWintour.id })
+UpToYou = Collection.create!({ title: "Up To You, Now", mood_keywords: ['relief', 'tired'], publish_status: false, user_id: AnnaWintour.id })
+Wild = Collection.create!({ title: "Wild", mood_keywords: ['party', 'fun', 'heady'], publish_status: false, user_id: AnnaWintour.id })
+BreakFree = Collection.create!({ title: "Break Free", mood_keywords: ['fly like an eagle'], publish_status: false, user_id: AnnaWintour.id })
+UpAllNight = Collection.create!({ title: "Up All Night", mood_keywords: ['restless'], publish_status: false, user_id: AnnaWintour.id })
+Hot = Collection.create!({ title: "HOT", mood_keywords: ['hot', 'going out'], publish_status: false, user_id: AnnaWintour.id })
 
 # ENTRIES
 Entry.create!({ title: "Finding Inspiration In The Stars", content: "Here I am searching the night sky for shooting stars through my kaleidescope. Listening to St. Vincent and studying Dalí's mind-bending work. Life is good.", collection_id: Ethereal.id })

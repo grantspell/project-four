@@ -45,15 +45,22 @@ class WorkspaceView extends Component {
 
     getUserCollections = async () => {
         const userId = this.state.user.id
-
         console.log(userId)
 
         const res = await axios.get(`/api/collections/${userId}`)
-        await this.setState({ userCollections: res.data })
+        if (this.res = !null) {
+            await this.setState({ userCollections: res.data })
+        } else {
+            this.newCollection()
+        }
         console.log(res)
 
         this.setWorkingCollection()
     }
+
+    // newCollection = aysnc () => {
+    //     const res = await axios.post(``)
+    // }
 
     setWorkingCollection = async () => {
         await this.setState({ workingCollection: this.state.userCollections[0] })

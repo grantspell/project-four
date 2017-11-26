@@ -14,6 +14,16 @@ class Api::CollectionsController < ApplicationController
         render json: @collections
     end
 
+    def create
+        user_id = params[:user_id]
+
+        @newCollection = Collection.new()
+
+        @newCollection.user_id << user_id
+
+        # if(@)
+    end
+
     def show
         user_id = params[:user_id]
         collection_id = params[:collection_id]

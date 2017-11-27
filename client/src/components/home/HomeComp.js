@@ -64,7 +64,6 @@ const Buttons = styled.div`
         color: black;
         letter-spacing: 5px;
         background-color: white;
-
     }
 `
 

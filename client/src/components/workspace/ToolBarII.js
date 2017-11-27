@@ -7,7 +7,14 @@ const ToolBarWrapper = styled.div`
 
 `
 const Buttons = styled.div`
-
+    .aButton {
+        background-color: rgba(0, 0, 0, 1);
+        color: white;
+        border-radius: 100%;
+        border: none;
+        margin: 5px;
+        text-decoration: none;
+    }
 `
 const ExtendedWrapper = styled.div`
     display: flex;
@@ -48,7 +55,7 @@ class ToolBarII extends Component {
             <ToolBarWrapper>
                 
                 <Buttons>
-                    <button onClick={this.toggleTB}><i class="material-icons">chevron_left</i></button>
+                    <button className="aButton" onClick={this.toggleTB}><i class="material-icons">chevron_left</i></button>
                 </Buttons>
                 { visible && <EToolBar /> }
                 

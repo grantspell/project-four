@@ -23,7 +23,7 @@ const CollectionStyle = styled.div`
     height: 100vh;
 `
 const ToolBarStyle = styled.div`
-    background-color: yellow;
+    background-color: white;
     height: 100vh;
 `
 

@@ -6,6 +6,7 @@ import axios from 'axios';
 // COMPONENTS
 import HomeHeader from './HomeHeader.js'
 import HomeContent from './HomeContent.js'
+import HomeComp from './HomeComp.js'
 
 // STYLES
 const HomeWrapper = styled.div`
@@ -16,8 +17,9 @@ class HomeView extends Component {
     render() {
         return (
             <HomeWrapper>
-                <HomeHeader />
-                <HomeContent />
+                {/* <HomeHeader />
+                <HomeContent /> */}
+                <HomeComp />
             </HomeWrapper>
         );
     }

@@ -55,7 +55,7 @@ class ToolBarII extends Component {
             <ToolBarWrapper>
                 
                 <Buttons>
-                    <button className="aButton" onClick={this.toggleTB}><i class="material-icons">chevron_left</i></button>
+                    <button className="aButton" onClick={this.toggleTB}><i className="material-icons">chevron_left</i></button>
                 </Buttons>
                 { visible && <EToolBar /> }
                 

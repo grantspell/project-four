@@ -64,6 +64,10 @@ const ButtonStyle = styled.div`
 `
 
 const SideBar = (props) => {
+
+    const createCollection = () => {
+        props.createCollection()
+    }
     
     return (
         <SideBarStyle>
@@ -76,6 +80,7 @@ const SideBar = (props) => {
             </UserInfo>
             <ListsStyle>
                 <h1>COLLECTIONS</h1>
+                <button onClick={createCollection}>Create Collection</button>
                 {props.userCollections.map((collection) => {
                     return (
                         <CollectionList key={collection._id} _id={collection._id} id={collection.id}

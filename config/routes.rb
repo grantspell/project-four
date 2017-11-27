@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     get "/collections/:user_id", to: "collections#userCollections"
     get "/collections/:user_id/:collection_id", to: "collections#show", as: "collection"
     post "/collections/:user_id", to: "collections#create"
+    put "/collections/:user_id/:collection_id", to: "collections#update"
+    patch "/collections/:user_id/:collection_id", to: "collections#update"
+    delete "/collections/:user_id/:collection_id", to: "collections#destroy"
   end
 
   # collection content [visual, audio, entry]

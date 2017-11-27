@@ -60,14 +60,21 @@ class WorkspaceView extends Component {
         console.log(userId)
 
         const res = await axios.get(`/api/collections/${userId}`)
-        if (this.res = !null) {
-            await this.setState({ userCollections: res.data })
-        } else {
-            console.log("ERROR")
-        }
-        console.log(res)
+        await this.setState({ userCollections: res.data })
 
         this.setWorkingCollection()
+    }
+
+    createCollection = async () => {
+        const userId = this.state.user.id
+
+        const res = await axios.post(`/api/collections/${userId}`)
+        const { userCollections } = this.state
+        userCollections << res.data
+
+        this.setState({ userCollections: userCollections })
+
+        this.componentWillMount()
     }
 
     setWorkingCollection = async () => {
@@ -110,6 +117,7 @@ class WorkspaceView extends Component {
                         userImage={this.state.user.user_image}
                         userCollections={this.state.userCollections}
                         updateWorkingCollection={this.updateWorkingCollection}
+                        createCollection={this.createCollection}
                     />
                 </SideBarStyle>
 

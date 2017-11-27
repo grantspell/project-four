@@ -17,7 +17,8 @@ class Api::CollectionsController < ApplicationController
     def create
         user_id = params[:user_id]
 
-        @newCollection = Collection.new(collection_params)
+        @newCollection = Collection.new(title: "New Collection", user_id: user_id)
+
         if @newCollection.save
             render json: @newCollection
         end
@@ -30,6 +31,30 @@ class Api::CollectionsController < ApplicationController
         @collection = Collection.where(user_id: user_id, id: collection_id)
 
         render json: @collection
+    end
+
+    def update
+        user_id = params[:user_id]
+        collection_id = params[:collection_id]
+
+        @collection = Collection.where(user_id: user_id, id: collection_id)
+
+        @collection.update_attributes(collection_params)
+
+        render json: @collection
+    end
+
+    def destroy
+        user_id = params[:user_id]
+        collection_id = params[:collection_id]
+
+        @collection = Collection.where(user_id: user_id, id: collection_id)
+
+        @collection.destroy
+
+        render json: {
+            msg: "Collection Successfully Deleted!"
+        }
     end
 
     private

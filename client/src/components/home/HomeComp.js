@@ -23,11 +23,20 @@ const Bubble = styled.div`
     border: 10px double black;
 `
 const Title = styled.div`
+    text-align: center;
+    width: 100%;
+
     h1 {
         color: white;
         font-family: 'Barlow Semi Condensed', sans-serif;
         font-size: 50px;
         text-shadow: 3px 3px 0px black;
+    }
+    p {
+        width: 100%;
+        color: black;
+        letter-spacing: 5px;
+        padding: 3px;
     }
 `
 const Buttons = styled.div`
@@ -44,6 +53,7 @@ class HomeComp extends Component {
                 <Bubble>
                     <Title>
                         <h1>DILETTANTE</h1>
+                        <p>EXPLORING ART FUSION</p>
                     </Title>
                     <Buttons>
 

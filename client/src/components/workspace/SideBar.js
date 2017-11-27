@@ -35,14 +35,26 @@ const UserText = styled.div`
     margin-top: 15px;
     padding: 1px;
     text-align: center;
+
+    h1 {
+        letter-spacing: 5px;
+    }
 `
 const ListsStyle = styled.div`
-h1 {
-    font-family: 'Barlow Semi Condensed', sans-serif;
-}
+    width: 80%;
+    text-align: center;
 
+    h1 {
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        letter-spacing: 5px;
+        text-decoration: underline;
+        margin: 0 auto;
+    }
 `
 const ButtonStyle = styled.div`
+    width: 100%;
+    text-align: center;
+
     button {
         margin: 5px;
     }

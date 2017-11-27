@@ -10,9 +10,13 @@ const CollectionWrapper = styled.div`
     justify-content: space-around;
     align-items: center;
     height: 100vh;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 `
 const ArtWrapper = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 `
 const VisualContent = styled.div`
     img {
@@ -22,7 +26,9 @@ const VisualContent = styled.div`
     }
 `
 const AudioContent = styled.div`
+    .player {
 
+    }
 `
 const EntryContent = styled.div`
     p {
@@ -40,7 +46,7 @@ const Collection = (props) => {
                 </VisualContent>
 
                 <AudioContent>
-                    <audio controls autoPlay loop
+                    <audio className="player" controls autoPlay loop preload
                         src={props.collectionA}
                     />
                 </AudioContent>

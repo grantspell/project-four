@@ -4,10 +4,16 @@ import styled from 'styled-components';
 // STYLES
 const Wrapper = styled.div`
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 `
 const CollectionListStyle = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    width: 65%;
     
     button {
         margin: 1px;
@@ -19,6 +25,7 @@ const CollectionNav = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 65%;
 
     button {
         margin: 1px;

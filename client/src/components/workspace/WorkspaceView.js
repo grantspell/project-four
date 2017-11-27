@@ -5,6 +5,7 @@ import styled from 'styled-components';
 // COMPONENTS
 import SideBar from './SideBar.js'
 import Collection from './Collection.js'
+import CollectionNav from './CollectionNav.js'
 
 // STYLES
 const WorkspaceWrapper = styled.div`
@@ -19,6 +20,9 @@ const SideBarStyle = styled.div`
 const CollectionStyle = styled.div`
     width: 75vw;
     height: 100vh;
+`
+const CollectionNavigation = styled.div`
+    background-color: yellow;
 `
 
 class WorkspaceView extends Component {
@@ -134,6 +138,10 @@ class WorkspaceView extends Component {
                         })}
                     />
                 </CollectionStyle>
+
+                <CollectionNavigation>
+                        <CollectionNav />
+                </CollectionNavigation>
 
             </WorkspaceWrapper>
         );

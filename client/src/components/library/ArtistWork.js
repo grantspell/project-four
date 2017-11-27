@@ -28,6 +28,9 @@ const AudioText = styled.div`
         font-weight: bold;
     }
 `
+const APlayer = styled.audio`
+    display: none;
+`
 
 class ArtistWork extends Component {
 
@@ -74,9 +77,9 @@ class ArtistWork extends Component {
                                         <p><span>Track:</span> {art.trackName}</p>
                                         <p><span>Album:</span> {art.collectionName}</p>
                                     </AudioText>
-                                    <audio controls loop>
+                                    <APlayer controls loop>
                                         <source src={art.previewUrl} type="audio/wav" />
-                                    </audio>
+                                    </APlayer>
                                 </AudioStyle>
                         )}
                 })}

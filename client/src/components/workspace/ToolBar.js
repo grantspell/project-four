@@ -1,59 +1,74 @@
-// import React, { Component } from 'react';
-// import styled from 'styled-components';
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
-// // STYLES
-// const ToolBarWrapper = styled.div`
-//     height: 50vh;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: flex-start;
-//     align-content: center;
-// `
-// const ToolBarMenu = styled.div`
-//     color: black;
-// `
+// COMPONENTS
+import TBMenu from './TBMenu'
 
-// class ToolBar extends Component {
-    
-//     state = {
-//         toolBarVisible: false,
-//     }
-    
-//     expandToolbar = () => {
-//         this.setState({ toolBarVisible: true })
-//         console.log(this.state.toolBarVisible)
-//     }
-    
-//     render() {
+// STYLES
+const ToolBarWrapper = styled.div`
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
 
-//         // if(this.state.toolBarVisible == true) {
-//         //     return (
-//         //         <div>THIS IS CLEARLY HERE</div>
-//         //     )
-//         // }
+    button {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        text-decoration: none;
+    }
+`
+const ToolBarMenu = styled.div`
+    color: black;
+`
+const VisualLibrary = styled.div`
+
+`
+
+class ToolBar extends Component {
+    
+    state = {
+        toolBarVisible: false,
+    }
+    
+    expandToolbar = (event) => {
+        event.preventDefault()
         
-//         return (
-//             <div>
+        this.setState({ toolBarVisible: true })
+        console.log(this.state.toolBarVisible)
+    }
+    
+    render() {
 
-//                 <ToolBarWrapper>
-//                     <button onClick={this.expandToolBar}>+</button>
-//                     <button>-</button>
-//                 </ToolBarWrapper>
+        // if(this.state.toolBarVisible == true) {
+        //     return (
+        //         <div>THIS IS CLEARLY HERE</div>
+        //     )
+        // }
 
-//                 <ToolBarMenu>
-//                     <h3>COLLECTION NAME</h3>
-//                     <button>VISUALS</button>
-//                     <button>AUDIO</button>
-//                 </ToolBarMenu>
+        
+        return (
+            <div>
 
-//                 <VisualLibrary>
-//                     {/* make axios call then map art pieces by artist type `visual` then map */}
-//                         {/* visual_img_url in thumbnail size, onclick adds to collection */}
-//                 </VisualLibrary>
+                <ToolBarWrapper>
+                    <button type="submit" value="Expand" onClick={this.expandToolBar}><i class="material-icons">chevron_left</i></button>
+                    { this.state.toolBarVisible ? <TBMenu /> : null }
+                </ToolBarWrapper>
+
+                <ToolBarMenu>
+                    <h3>COLLECTION NAME</h3>
+                    <button>VISUALS</button>
+                    <button>AUDIO</button>
+                </ToolBarMenu>
+
+                <VisualLibrary>
+                    {/* make axios call then map art pieces by artist type `visual` then map */}
+                        {/* visual_img_url in thumbnail size, onclick adds to collection */}
+                </VisualLibrary>
                 
-//             </div>
-//         );
-//     }
-// }
+            </div>
+        );
+    }
+}
 
-// export default ToolBar;
+export default ToolBar;

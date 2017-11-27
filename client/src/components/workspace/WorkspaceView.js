@@ -5,7 +5,8 @@ import styled from 'styled-components';
 // COMPONENTS
 import SideBar from './SideBar.js'
 import Collection from './Collection.js'
-import ToolBar from './ToolBar.js'
+// import ToolBar from './ToolBar.js'
+import ToolBar from './ToolBarII.js'
 
 // STYLES
 const WorkspaceWrapper = styled.div`
@@ -130,10 +131,10 @@ class WorkspaceView extends Component {
                         })}
                     />
                 </CollectionStyle>
-{/* 
+
                 <ToolBarStyle>
                         <ToolBar />
-                </ToolBarStyle> */}
+                </ToolBarStyle>
 
             </WorkspaceWrapper>
         );

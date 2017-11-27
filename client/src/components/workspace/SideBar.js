@@ -2,40 +2,43 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+// COMPONENTS
+import CollectionList from './CollectionList'
+
 // STYLES
 const SideBarStyle = styled.div`
     font-family: 'Barlow Semi Condensed', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 25vw;
     height: 100vh;
-    background-color: blue;
-    color: white;
-    border-right: 5px solid rgba(0,0,0,.3);
+    background-color: #EEEEEE;
+    color: black;
+    box-shadow: 1px 0px 5px black;
 `
 const UserInfo = styled.div`
-    background-color: black;
-    margin-top: 50px;
-    border: 15px double pink;
-    padding: 35px;
+    background-color: white;
+    border: 7px double black;
+    padding: 20px;
     text-align: center;
 
     img {
-        height: 250px;
-        margin: 25px 0px 0px 0px;
+        height: 15vw;
+        background-color: white;
         border-radius: 100%;
-        box-shadow: 5px 5px 0px yellow, -5px -5px 0px red;
+        box-shadow: 6px 6px 0px black, -6px -6px 0px white;
     }
-    h1 {
-        margin-top: 30px;
-    }
+`
+const UserText = styled.div`
+    color: blue;
+    margin-top: 15px;
+    padding: 1px;
+    text-align: center;
 `
 const ListsStyle = styled.div`
 h1 {
     font-family: 'Barlow Semi Condensed', sans-serif;
-    
 }
 
 `
@@ -43,31 +46,27 @@ const ButtonStyle = styled.div`
     button {
         margin: 5px;
     }
-
 `
 
 const SideBar = (props) => {
-
-    const setWorkingCollection = (event) => {
-        props.setWorkingCollection(event, props.collection_id)
-    }
     
     return (
         <SideBarStyle>
             <UserInfo>
                 <img src={props.userImage} />
+                <UserText>
                 <h1>{props.user}</h1>
                 <p>@{props.userName}</p>
+                </UserText>
             </UserInfo>
             <ListsStyle>
                 <h1>COLLECTIONS</h1>
-                {props.userCollections.map(collection => {
+                {props.userCollections.map((collection) => {
                     return (
-                        <div key={collection.id} _id={collection.id}>
-                            <li><button onClick={this.setWorkingCollection}>
-                                {collection.title}
-                            </button></li>
-                        </div>
+                        <CollectionList key={collection._id} _id={collection._id} id={collection.id}
+                            title={collection.title}
+                            updateWorkingCollection={props.updateWorkingCollection}
+                        />
                     )})}
 
             </ListsStyle>

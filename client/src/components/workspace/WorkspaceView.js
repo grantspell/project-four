@@ -12,6 +12,14 @@ const WorkspaceWrapper = styled.div`
     flex-direction: row;
     justify-content: flex-start;
 `
+const SideBarStyle = styled.div`
+    width: 25vw;
+    height: 100vh;
+`
+const CollectionStyle = styled.div`
+    width: 75vw;
+    height: 100vh;
+`
 
 class WorkspaceView extends Component {
 
@@ -58,15 +66,25 @@ class WorkspaceView extends Component {
         this.setWorkingCollection()
     }
 
-    // newCollection = aysnc () => {
-    //     const res = await axios.post(``)
-    // }
-
     setWorkingCollection = async () => {
         await this.setState({ workingCollection: this.state.userCollections[0] })
         console.log(this.state.workingCollection)
 
         this.getVisualAndAudio()
+    }
+
+    updateWorkingCollection = async (collectionId) => {
+        const userId = this.state.user.id
+        console.log(userId)
+        const id = collectionId
+        console.log(id)
+
+        const res = await axios.get(`/api/collections/${userId}/${id}`)
+        await this.setState({ workingCollection: res.data[0] })
+
+        console.log(res)
+
+        this.getVisualAndAudio();
     }
 
     getVisualAndAudio = async () => {
@@ -88,29 +106,34 @@ class WorkspaceView extends Component {
         return (
             <WorkspaceWrapper>
                 
-                <SideBar 
-                user={this.state.user.name}
-                userName={this.state.user.username}
-                userImage={this.state.user.user_image}
-                userCollections={this.state.userCollections}
-                />
+                <SideBarStyle>
+                    <SideBar 
+                        user={this.state.user.name}
+                        userName={this.state.user.username}
+                        userImage={this.state.user.user_image}
+                        userCollections={this.state.userCollections}
+                        updateWorkingCollection={this.updateWorkingCollection}
+                    />
+                </SideBarStyle>
 
-                <Collection
-                user={this.state.user.name}
-                userId={this.state.user.id}
-                userName={this.state.user.username}
-                collectionId={this.state.workingCollection.id}
-                collectionName={this.state.workingCollection.title}
-                collectionV={this.state.visuals.map(visual => {
-                    return visual.visual_url
-                })}
-                collectionA={this.state.audio.map(audio => {
-                    return audio.previewUrl
-                })}
-                collectionE={this.state.entries.map(entry => {
-                    return entry.content
-                })}
-                />
+                <CollectionStyle>
+                    <Collection
+                        user={this.state.user.name}
+                        userId={this.state.user.id}
+                        userName={this.state.user.username}
+                        collectionId={this.state.workingCollection.id}
+                        collectionName={this.state.workingCollection.title}
+                        collectionV={this.state.visuals.map(visual => {
+                            return visual.visual_url
+                        })}
+                        collectionA={this.state.audio.map(audio => {
+                            return audio.previewUrl
+                        })}
+                        collectionE={this.state.entries.map(entry => {
+                            return entry.content
+                        })}
+                    />
+                </CollectionStyle>
 
             </WorkspaceWrapper>
         );

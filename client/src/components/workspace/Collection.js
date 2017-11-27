@@ -5,11 +5,14 @@ import axios from 'axios';
 // STYLES
 const CollectionWrapper = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     height: 100vh;
-    width: 75vw;
+`
+const ArtWrapper = styled.div`
+
 `
 const VisualContent = styled.div`
     img {
@@ -19,25 +22,29 @@ const VisualContent = styled.div`
     }
 `
 const AudioContent = styled.div`
-    
+
 `
 const EntryContent = styled.div`
-
+    p {
+        word-wrap: break-word;
+    }
 `
 
 const Collection = (props) => {
     return (
         <CollectionWrapper>
-            <VisualContent>
+            <ArtWrapper>
                 <h1>{props.collectionName}</h1>
-                <img src={props.collectionV} />
-            </VisualContent>
+                <VisualContent>
+                    <img src={props.collectionV} />
+                </VisualContent>
 
-            <AudioContent>
-                <audio controls autoPlay loop
-                    src={props.collectionA}
-                />
-            </AudioContent>
+                <AudioContent>
+                    <audio controls autoPlay loop
+                        src={props.collectionA}
+                    />
+                </AudioContent>
+            </ArtWrapper>
 
             <EntryContent>
                 <p>{props.collectionE}</p>

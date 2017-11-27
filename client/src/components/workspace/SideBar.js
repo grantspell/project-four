@@ -46,6 +46,9 @@ const ButtonStyle = styled.div`
     button {
         margin: 5px;
     }
+    .aLink {
+        text-decoration: none;
+    }
 `
 
 const SideBar = (props) => {
@@ -71,8 +74,8 @@ const SideBar = (props) => {
 
             </ListsStyle>
                  <ButtonStyle>
-                     <button><Link to="/library">Artists Library</Link></button>
-                     <button><Link to={`/account/${props.userName}`}>Account</Link></button>
+                     <button><Link to="/library" className="aLink">Library</Link></button>
+                     <button><Link to={`/account/${props.userName}`} className="aLink">Account</Link></button>
                  </ButtonStyle>
         </SideBarStyle>
     );

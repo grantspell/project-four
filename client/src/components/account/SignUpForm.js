@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 
-//STYLES
+// STYLES
 const FormStyle = styled.div`
     display: inline-flex;
     flex-direction: column;
@@ -35,7 +35,8 @@ class SignUpForm extends Component {
         newUser: {
             name: '',
             username: '',
-            password: ''
+            password: '',
+            user_image: ''
         },
         redirectToWorkspace: false
     }
@@ -91,6 +92,14 @@ class SignUpForm extends Component {
                         <input
                             onChange={this.handleChange} name="password"
                             type="password" value={this.state.newUser.password}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="user_image">Photo URL: </label>
+                        <input
+                            onChange={this.handleChange} name="user_image"
+                            type="url" value={this.state.newUser.user_image}
                         />
                     </div>
 

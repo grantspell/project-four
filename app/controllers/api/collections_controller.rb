@@ -17,11 +17,10 @@ class Api::CollectionsController < ApplicationController
     def create
         user_id = params[:user_id]
 
-        @newCollection = Collection.new()
-
-        @newCollection.user_id << user_id
-
-        # if(@)
+        @newCollection = Collection.new(collection_params)
+        if @newCollection.save
+            render json: @newCollection
+        end
     end
 
     def show
@@ -33,5 +32,10 @@ class Api::CollectionsController < ApplicationController
         render json: @collection
     end
 
+    private
+    
+        def collection_params
+            params.require(:collection).permit(:title, :mood_keywords, :publish_status, :user_id)
+        end
 
 end

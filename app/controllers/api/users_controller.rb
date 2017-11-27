@@ -12,7 +12,10 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
-            render json: @user
+            @initialCollection = Collection.new(title: "Welcome!", user_id: @user.id )
+            if @initialCollection.save
+                render json: @user
+            end
         end
     end
 

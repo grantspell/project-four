@@ -47,8 +47,6 @@ class WorkspaceView extends Component {
     getUserData = async () => {
         const username = this.props.match.params.username
 
-        console.log(username)
-
         const res = await axios.get(`/api/users/${username}`)
         await this.setState({ user: res.data })
 
@@ -63,7 +61,7 @@ class WorkspaceView extends Component {
         if (this.res = !null) {
             await this.setState({ userCollections: res.data })
         } else {
-            this.newCollection()
+            console.log("ERROR")
         }
         console.log(res)
 
@@ -72,21 +70,16 @@ class WorkspaceView extends Component {
 
     setWorkingCollection = async () => {
         await this.setState({ workingCollection: this.state.userCollections[0] })
-        console.log(this.state.workingCollection)
 
         this.getVisualAndAudio()
     }
 
     updateWorkingCollection = async (collectionId) => {
         const userId = this.state.user.id
-        console.log(userId)
         const id = collectionId
-        console.log(id)
 
         const res = await axios.get(`/api/collections/${userId}/${id}`)
         await this.setState({ workingCollection: res.data[0] })
-
-        console.log(res)
 
         this.getVisualAndAudio();
     }
@@ -102,8 +95,6 @@ class WorkspaceView extends Component {
 
         const entry = await axios.get(`/api/content/${collectionId}/e`)
         this.setState({ entries: entry.data })
-
-        console.log(this.state)
     }
 
     render() {

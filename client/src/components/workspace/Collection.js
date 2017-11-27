@@ -14,6 +14,7 @@ const CollectionWrapper = styled.div`
 const VisualContent = styled.div`
     img {
         width: 35vw;
+        max-height: 60vh;
         border: 10px double pink;
     }
 `

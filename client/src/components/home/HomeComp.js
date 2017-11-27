@@ -79,7 +79,7 @@ class HomeComp extends Component {
                     </Title>
                     <Buttons>
 
-                        <button className="aButton"><Link to="/account" alt="Account Login or Signup Button"><i class="material-icons">person_outline</i></Link></button>
+                        <button className="aButton"><Link to="/account" alt="Account Login or Signup Button"><i class="material-icons">account_circle</i></Link></button>
                         
                     </Buttons>
                 </Bubble>

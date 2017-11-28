@@ -45,10 +45,9 @@ class Api::CollectionsController < ApplicationController
     end
 
     def destroy
-        user_id = params[:user_id]
         collection_id = params[:collection_id]
 
-        @collection = Collection.where(user_id: user_id, id: collection_id)
+        @collection = Collection.find_by_id(collection_id)
 
         @collection.destroy
 

@@ -13,18 +13,41 @@ const WorkspaceWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 `
 const SideBarStyle = styled.div`
     width: 25vw;
     height: 100vh;
+
+    @media (max-width: 768px) {
+        width: 100vw;
+        height: 100vh;
+    }
 `
 const CollectionStyle = styled.div`
     width: 75vw;
     height: 100vh;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100vw;
+    }
 `
 const ToolBarStyle = styled.div`
     background-color: white;
     height: 100vh;
+
+    @media (max-width: 768px) {
+        
+    }
 `
 
 class WorkspaceView extends Component {
@@ -74,7 +97,7 @@ class WorkspaceView extends Component {
 
         this.setState({ userCollections: userCollections })
 
-        this.componentWillMount()
+        this.getUserCollections()
     }
 
     setWorkingCollection = async () => {

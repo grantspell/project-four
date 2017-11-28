@@ -21,6 +21,11 @@ const Bubble = styled.div`
     align-items: center;
     border-radius: 100%;
     border: 10px double black;
+
+    @media (max-width: 768px) {
+        height: 300px;
+        width: 300px;
+    }
 `
 const Title = styled.div`
     text-align: center;
@@ -40,6 +45,17 @@ const Title = styled.div`
         color: black;
         letter-spacing: 9.5px;
         padding: 3px;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 30px;
+            margin-bottom: -4px;
+        }
+        p {
+            font-size: 9px;
+            letter-spacing: 5.5px;
+        }
     }
 `
 const Buttons = styled.div`

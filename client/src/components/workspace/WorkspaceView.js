@@ -36,7 +36,7 @@ const CollectionStyle = styled.div`
 
     @media (max-width: 768px) {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         width: 100vw;
     }

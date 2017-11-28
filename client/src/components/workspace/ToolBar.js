@@ -8,9 +8,7 @@ const ToolBarWrapper = styled.div`
 `
 const Buttons = styled.div`
     .aButton {
-        background-color: rgba(0, 0, 0, 1);
-        color: white;
-        border-radius: 100%;
+        background-color: rgba(0,0,0,0);
         border: none;
         margin: 5px;
         text-decoration: none;
@@ -55,7 +53,7 @@ class ToolBar extends Component {
             <ToolBarWrapper>
                 
                 <Buttons>
-                    <button className="aButton" onClick={this.toggleTB}><i className="material-icons">chevron_left</i></button>
+                    <button className="aButton" onClick={this.toggleTB}><i class="material-icons">add_circle_outline</i></button>
                 </Buttons>
                 { visible && <EToolBar /> }
                 

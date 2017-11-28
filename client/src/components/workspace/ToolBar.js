@@ -1,72 +1,65 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-
-// COMPONENTS
-import TBMenu from './TBMenu'
 
 // STYLES
 const ToolBarWrapper = styled.div`
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
 
-    button {
-        background-color: rgba(255, 255, 255, 0);
+`
+const Buttons = styled.div`
+    .aButton {
+        background-color: rgba(0, 0, 0, 1);
+        color: white;
+        border-radius: 100%;
         border: none;
+        margin: 5px;
         text-decoration: none;
     }
 `
-const ToolBarMenu = styled.div`
-    color: black;
+const ExtendedWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 `
-const VisualLibrary = styled.div`
 
-`
+const EToolBar = (props) => {
+    return (
+        <ExtendedWrapper>
+            <button>V</button>
+            <button>M</button>
+            <button>E</button>
+            <button>P</button>
+        </ExtendedWrapper>
+    )
+}
 
 class ToolBar extends Component {
-    
-    state = {
-        toolBarVisible: false,
+    constructor(props) {
+        super(props);
+        this.state = {
+            visible: false,
+        };
+        this.toggleTB = this.toggleTB.bind(this)
     }
-    
-    expandToolbar = (event) => {
-        event.preventDefault()
-        
-        this.setState({ toolBarVisible: true })
-        console.log(this.state.toolBarVisible)
+
+    toggleTB = () => {
+        const { visible } = this.state
+        this.setState({ visible: !visible })
     }
     
     render() {
-
-        // if(this.state.toolBarVisible == true) {
-        //     return (
-        //         <div>THIS IS CLEARLY HERE</div>
-        //     )
-        // }
-
-        
+        const { title, children } = this.props;
+        const { visible } = this.state;
         return (
-            <div>
-
-                <ToolBarWrapper>
-                    <button type="submit" value="Expand" onClick={this.expandToolBar}><i class="material-icons">chevron_left</i></button>
-                    { this.state.toolBarVisible ? <TBMenu /> : null }
-                </ToolBarWrapper>
-
-                <ToolBarMenu>
-                    <h3>COLLECTION NAME</h3>
-                    <button>VISUALS</button>
-                    <button>AUDIO</button>
-                </ToolBarMenu>
-
-                <VisualLibrary>
-                    {/* make axios call then map art pieces by artist type `visual` then map */}
-                        {/* visual_img_url in thumbnail size, onclick adds to collection */}
-                </VisualLibrary>
+            <ToolBarWrapper>
                 
-            </div>
+                <Buttons>
+                    <button className="aButton" onClick={this.toggleTB}><i className="material-icons">chevron_left</i></button>
+                </Buttons>
+                { visible && <EToolBar /> }
+                
+            </ToolBarWrapper>
         );
     }
 }

@@ -5,8 +5,7 @@ import styled from 'styled-components';
 // COMPONENTS
 import SideBar from './SideBar.js'
 import Collection from './Collection.js'
-// import ToolBar from './ToolBar.js'
-import ToolBar from './ToolBarII.js'
+import ToolBar from './ToolBar.js'
 
 // STYLES
 const WorkspaceWrapper = styled.div`

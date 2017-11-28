@@ -38,7 +38,7 @@ class ToolBarII extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            visible: false,
+            visible: false
         };
         this.toggleTB = this.toggleTB.bind(this)
     }

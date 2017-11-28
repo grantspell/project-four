@@ -12,6 +12,13 @@ const AccountWrapper = styled.div`
     justify-content: space-around;
     align-content: center;
     margin-top: 50px;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 `
 
 class AccountView extends Component {

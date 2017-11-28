@@ -23,6 +23,10 @@ const FormStyle = styled.div`
         }
 
     }
+
+    @media (max-width: 768px) {
+        
+    }
 `
 const AllWrapper = styled.div`
     border: 10px double pink;

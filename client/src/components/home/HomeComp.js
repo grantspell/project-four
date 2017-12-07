@@ -12,14 +12,13 @@ const Wrapper = styled.div`
     align-items: center;
 `
 const Bubble = styled.div`
-    background-color: pink;
+    background-color: white;
     height: 600px;
     width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border-radius: 100%;
     border: 10px double black;
 
     @media (max-width: 768px) {
@@ -36,9 +35,10 @@ const Title = styled.div`
         color: white;
         font-family: 'Barlow Semi Condensed', sans-serif;
         font-size: 50px;
-        text-shadow: 3px 3px 0px black;
+        text-shadow: -3px 3px 0px black;
         margin-bottom: -9px;
         letter-spacing: 10px;
+        background-color: yellow;
     }
     p {
         width: 100%;
@@ -73,7 +73,7 @@ const Buttons = styled.div`
         text-decoration: none;
     }
     .material-icons {
-        color: white;
+        color: black;
         font-size: 48px;
     }
     p {

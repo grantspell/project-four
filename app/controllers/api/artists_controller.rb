@@ -28,6 +28,18 @@ class Api::ArtistsController < ApplicationController
         render json: @artistry
     end
 
+    def visuals
+        @visuals = Visual.all
+
+        render json: @visuals
+    end
+
+    def audios
+        @audios = Audio.all
+
+        render json: @audios
+    end
+
     def show_song
         artistId = params[:artist_id]
 

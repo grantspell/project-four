@@ -29,7 +29,6 @@ const AudioText = styled.div`
     }
 `
 const APlayer = styled.audio`
-    display: none;
 `
 
 class ArtistWork extends Component {

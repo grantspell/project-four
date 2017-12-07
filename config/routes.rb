@@ -36,4 +36,10 @@ Rails.application.routes.draw do
     get "/artists/:artist_id/song", to: "artists#show_song", as: "song"
   end
 
+  # art from `library`
+  namespace :api do
+    get "/v", to: "artists#visuals"
+    get "/a", to: "artists#audios"
+  end
+
 end

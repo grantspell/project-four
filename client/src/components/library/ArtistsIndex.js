@@ -18,7 +18,7 @@ const AudioArtistsWrapper = styled.div`
     // justify-content: center;
     align-items: center;
     margin: 25px;
-    width: 45vw;
+    width: 35vw;
 `
 const VisualArtistsWrapper = styled.div`
     display: flex;
@@ -26,7 +26,7 @@ const VisualArtistsWrapper = styled.div`
     align-items: center;
     // justify-content: center;
     margin: 25px;
-    width: 45vw;
+    width: 35vw;
 `
 const ImgDiv = styled.div`
     img {
@@ -52,6 +52,9 @@ const ButtonDiv = styled.div`
 const AllContent = styled.div`
     margin-left: 5px;
     max-width: 25vw;
+`
+const aPlayer = styled.div`
+    display: none;
 `
 
 class ArtistsIndex extends Component {
@@ -121,7 +124,9 @@ class ArtistsIndex extends Component {
                         )
                     }
                 })}
+                <aPlayer>
                 <embed src={this.state.song} autoPlay="true" loop="true" hidden="true" type="audio/x-m4a"></embed>
+                </aPlayer>
             </ArtistsWrapper>
         );
     }

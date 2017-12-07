@@ -29,8 +29,36 @@ const FormStyle = styled.div`
     }
 `
 const AllWrapper = styled.div`
-    border: 10px double pink;
     padding: 50px;
+    height: 100%;
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+    align-items: center;
+
+    h1 {
+        letter-spacing: 6px;
+    }
+`
+const BlurbStyle = styled.div`
+    background-color: blue;
+    width: 50vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        height: 100%;
+        color: white;
+        padding: 50px;
+        font-size: 85px;
+        letter-spacing: 0px;
+        display: inline-block;
+        text-shadow: 15px 15px 0px yellow, -15px 15px 0px red;
+    }
 `
 
 class SignUpForm extends Component {
@@ -69,8 +97,13 @@ class SignUpForm extends Component {
         }
         
         return (
+            <div>
+                <BlurbStyle>
+                    {/* <p>☺︎</p> */}
+                    <p>DILETTANTE</p>
+                </BlurbStyle>
             <AllWrapper>
-                <h1>SignUp Form</h1>
+                <h1>Registration</h1>
 
                 <form onSubmit={this.handleSubmit}>
                 <FormStyle>
@@ -113,6 +146,7 @@ class SignUpForm extends Component {
                 </form>
 
             </AllWrapper>
+            </div>
         );
     }
 }

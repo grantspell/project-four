@@ -13,6 +13,7 @@ const AccountWrapper = styled.div`
     align-items: center;
     height: 100vh;
     width: 100vw;
+    flex-wrap: no-wrap;
 
     @media (max-width: 768px) {
         display: flex;

@@ -13,8 +13,8 @@ const Logo = styled.div`
     margin-left: 15px;
     color: black;
     text-shadow: -2px 2px 0px yellow;
-    font-family: 'Barlow Semi Condensed', sans-serif;
-`
+    font-family: 'Source Code Pro', monospace;    
+    `
 const ButtonOne = styled.div`
     margin-right: 15px;
 `

@@ -33,7 +33,7 @@ const Title = styled.div`
 
     h1 {
         color: white;
-        font-family: 'Barlow Semi Condensed', sans-serif;
+        font-family: 'Source Code Pro', monospace;    
         font-size: 50px;
         text-shadow: -3px 3px 0px black;
         margin: -9px 0px -9px 0px;

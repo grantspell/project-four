@@ -23,6 +23,8 @@ const UserList = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 15px;
     width: 60%;
     line-height: 1;
 

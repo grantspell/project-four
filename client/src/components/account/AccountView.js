@@ -10,8 +10,9 @@ import SignUp from './SignUp'
 const AccountWrapper = styled.div`
     display: flex;
     justify-content: space-around;
-    align-content: center;
-    margin-top: 50px;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 
     @media (max-width: 768px) {
         display: flex;

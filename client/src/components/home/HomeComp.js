@@ -36,7 +36,7 @@ const Title = styled.div`
         font-family: 'Barlow Semi Condensed', sans-serif;
         font-size: 50px;
         text-shadow: -3px 3px 0px black;
-        margin-bottom: -9px;
+        margin: -9px 0px -9px 0px;
         letter-spacing: 10px;
         background-color: yellow;
     }
@@ -82,6 +82,21 @@ const Buttons = styled.div`
         background-color: white;
     }
 `
+const Start = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    
+    p {
+        line-height: .1;
+        text-shadow: -2px 2px 0px yellow;
+    }
+    .arrow {
+        color: red;
+    }
+`
 
 class HomeComp extends Component {
     render() {
@@ -93,6 +108,10 @@ class HomeComp extends Component {
                         <p>EXPLORING ART FUSION</p>
                     </Title>
                     <Buttons>
+                        <Start>
+                        <p>GET STARTED</p>
+                        <p className="arrow">⇩</p>
+                        </Start>
 
                         <button className="aButton"><Link to="/account" alt="Account Login or Signup Button"><i class="material-icons">account_circle</i></Link></button>
                         

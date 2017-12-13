@@ -1,11 +1,7 @@
 class Api::ItunesSearchController < ApplicationController
 
-    def artist
+    def get
 
-    end
-
-    def song
-        
     end
     
 end

@@ -20,10 +20,19 @@ const ExtendedWrapper = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 20vh;
+    height: 70vh;
+
+    button {
+        transform: rotate(90deg);
+    }
 `
 const VisualWrapper = styled.div`
     display: flex;
+    flex-direction: column;
+
+    .visualLibrary {
+        max-height: 100px;
+    }
 `
 
 const EToolBar = (props) => {
@@ -34,20 +43,25 @@ const EToolBar = (props) => {
     
     return (
         <ExtendedWrapper>
-            <button onClick={displayVisual}>V</button>
-            <button>M</button>
-            <button>E</button>
-            <button>P</button>
+            <button onClick={displayVisual}>VISUAL</button>
+            <button>MUSIC</button>
+            <button>ENTRY</button>
+            <button>PUBLISH</button>
         </ExtendedWrapper>
     )
 };
 
 const Visuals = (props) => {
+
+    const updateVisual = () => {
+        props.updateVisual();
+    }
+    
     return (
         <VisualWrapper>
             {props.visuals.map(visual => {
                 return(
-                    <img src={visual.visual_url} />
+                    <img onClick={updateVisual} className="visualLibrary" src={visual.visual_url} />
                 )
             })}
         </VisualWrapper>
@@ -80,6 +94,10 @@ class ToolBar extends Component {
             visualVisible: !visualVisible 
         })
     }
+
+    updateVisual = async () => {
+        
+    }
     
     render() {
         const { visible } = this.state;
@@ -95,6 +113,7 @@ class ToolBar extends Component {
                 /> }
                 { visualVisible && <Visuals
                     visuals={this.state.visuals}
+                    updateVisual={this.updateVisual}
                 /> }
                 
             </ToolBarWrapper>

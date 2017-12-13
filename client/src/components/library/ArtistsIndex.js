@@ -18,7 +18,7 @@ const AudioArtistsWrapper = styled.div`
     // justify-content: center;
     align-items: center;
     margin: 25px;
-    width: 35vw;
+    width: 45vw;
 `
 const VisualArtistsWrapper = styled.div`
     display: flex;
@@ -26,13 +26,13 @@ const VisualArtistsWrapper = styled.div`
     align-items: center;
     // justify-content: center;
     margin: 25px;
-    width: 35vw;
+    width: 45vw;
 `
 const ImgDiv = styled.div`
     img {
         float: left;
         border-radius: 100%;
-        max-height: 250px;
+        max-height: 200px;
         border: 10px double pink;
     }
         `

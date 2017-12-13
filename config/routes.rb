@@ -42,4 +42,8 @@ Rails.application.routes.draw do
     get "/a", to: "artists#audios"
   end
 
+  namespace :api do
+    post "/audio/add", to: "contents#createAudio"
+  end
+
 end

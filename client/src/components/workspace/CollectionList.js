@@ -21,17 +21,6 @@ const CollectionListStyle = styled.div`
         // color: black;
     }
 `
-const CollectionNav = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 65%;
-
-    button {
-        margin: 1px;
-        width: 49%;        
-    }
-`
 
 const CollectionList = (props) => {
 
@@ -44,9 +33,6 @@ const CollectionList = (props) => {
         <CollectionListStyle>
             <button onClick={updateWorkingCollection}>{props.title}</button>
         </CollectionListStyle>
-        <CollectionNav>
-            <button>✎</button><button>✂︎</button>
-        </CollectionNav>
         </Wrapper>
     );
 };

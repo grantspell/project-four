@@ -71,6 +71,7 @@ const SideBar = (props) => {
     
     return (
         <SideBarStyle>
+            
             <UserInfo>
                 <img src={props.userImage} />
                 <UserText>
@@ -78,6 +79,7 @@ const SideBar = (props) => {
                 <p>@{props.userName}</p>
                 </UserText>
             </UserInfo>
+
             <ListsStyle>
                 <h1>COLLECTIONS</h1>
                 <button onClick={createCollection}>Create Collection</button>
@@ -88,12 +90,13 @@ const SideBar = (props) => {
                             updateWorkingCollection={props.updateWorkingCollection}
                         />
                     )})}
-
             </ListsStyle>
+
                  <ButtonStyle>
                      <button><Link to="/library" className="aLink">Library</Link></button>
                      <button><Link to={`/account/${props.userName}`} className="aLink">Account</Link></button>
                  </ButtonStyle>
+
         </SideBarStyle>
     );
 };

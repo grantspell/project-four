@@ -25,6 +25,9 @@ Hot = Collection.create!({ title: "HOT", mood_keywords: ['hot', 'going out'], pu
 Entry.create!({ title: "Finding Inspiration In The Stars", content: "Here I am searching the night sky for shooting stars through my kaleidescope. Listening to St. Vincent and studying Dalí's mind-bending work. Life is good.", collection_id: Ethereal.id })
 Entry.create!({ title: "Oh To Be The Real Thing", content: "Every single light, fading for the dark. Oh prediculation, feel the titilation. Know feel real.", collection_id: UpToYou.id })
 Entry.create!({ title: "Oh To Be The Real Thing", content: "Every single light, fading for the dark. Oh prediculation, feel the titilation. Know feel real.", collection_id: Wild.id })
+Entry.create!({ title: "Oh To Be The Real Thing", content: "Every single light, fading for the dark. Oh prediculation, feel the titilation. Know feel real.", collection_id: BreakFree.id })
+Entry.create!({ title: "Oh To Be The Real Thing", content: "Every single light, fading for the dark. Oh prediculation, feel the titilation. Know feel real.", collection_id: UpAllNight.id })
+Entry.create!({ title: "Oh To Be The Real Thing", content: "Every single light, fading for the dark. Oh prediculation, feel the titilation. Know feel real.", collection_id: Hot.id })
 
 # A ARTISTS
 StVincent = Artist.create!({ name: "St. Vincent", artist_type: "audio", description: "Anne Erin 'Annie' Clark (born September 28, 1982),[5][6] better known by her stage name St. Vincent, is an American musician, singer-songwriter, and multi-instrumentalist. After studying at Berklee College of Music for three years, she began her music career as a member of the Polyphonic Spree. Clark was also a member of Sufjan Stevens's touring band before forming her own band in 2006.", artist_image: "https://pbs.twimg.com/profile_images/917819850625617926/6Vs1Ae6B.jpg" })
@@ -48,6 +51,8 @@ Visual.create!({ title: "The Burning Giraffe", visual_url: "https://learnodo-new
 Visual.create!({ title: "The Burning Giraffe", visual_url: "https://learnodo-newtonic.com/wp-content/uploads/2017/02/The-Burning-Giraffe-1937-Salvador-Dali.jpg", artist_id: SalvadorDali.id, collection_id: UpToYou.id })
 Visual.create!({ title: "The Burning Giraffe", visual_url: "https://learnodo-newtonic.com/wp-content/uploads/2017/02/The-Burning-Giraffe-1937-Salvador-Dali.jpg", artist_id: SalvadorDali.id, collection_id: Wild.id })
 Visual.create!({ title: "Frida_One", visual_url: "https://i.imgur.com/9fWdQlR.jpg", artist_id: FridaKahlo.id, collection_id: Hot.id })
+Visual.create!({ title: "Frida_One", visual_url: "https://i.imgur.com/9fWdQlR.jpg", artist_id: FridaKahlo.id, collection_id: BreakFree.id })
+Visual.create!({ title: "Frida_One", visual_url: "https://i.imgur.com/9fWdQlR.jpg", artist_id: FridaKahlo.id, collection_id: UpAllNight.id })
 
 # AUDIOS
 Audio.create!({ trackName: "Dilettante", collectionName: "Strange Mercy", artistName: "St. Vincent", artworkUrl100: "http://is2.mzstatic.com/image/thumb/Music/v4/04/7b/b0/047bb06c-ce0f-b159-aa1a-e4a07c0c02b5/source/100x100bb.jpg",previewUrl: "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview71/v4/10/63/41/10634134-411d-d1c4-7427-4299a7623090/mzaf_3827557030517517515.plus.aac.p.m4a", artist_id: StVincent.id, collection_id: Ethereal.id })

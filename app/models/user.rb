@@ -1,4 +1,4 @@
 class User < ApplicationRecord
     has_many :collections, :dependent => :destroy
-    has_many :entries, through: :collection
+    has_many :entries, through: :collection, :dependent => :destroy
 end

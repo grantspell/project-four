@@ -62,6 +62,10 @@ class ArtistWork extends Component {
             artistry: res.data,
             artistId: a_id,
         })
+        const resII = await axios.get(`/api/artists/${a_id}`)
+        await this.setState({
+            artistType: resII.data.artist_type
+        })
         console.log(this.state)
     }
 
@@ -70,14 +74,7 @@ class ArtistWork extends Component {
             <ArtWrapper>
                 {this.state.artistry.map(art => {
 
-                    if (art.song == undefined) {
-                        return (
-                            <VisualContent className="visualArt" key={art.id} _id={art.id}>
-                                <h1>{art.title}</h1>
-                                <img src={art.visual_url} />
-                            </VisualContent>
-                        )
-                    } else {
+                    if (this.state.artistType == 'audio') {
                         return (
                             <AudioStyle className="audioArt" key={art.id} _id={art.id}>
                                 <Image>
@@ -92,6 +89,13 @@ class ArtistWork extends Component {
                                     <source src={art.previewUrl} type="audio/wav" />
                                 </APlayer>
                             </AudioStyle>
+                        )
+                    } else {
+                        return (
+                            <VisualContent className="visualArt" key={art.id} _id={art.id}>
+                                <h1>{art.title}</h1>
+                                <img src={art.visual_url} />
+                            </VisualContent>
                         )
                     }
                 })}

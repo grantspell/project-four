@@ -7,6 +7,13 @@ import styled from 'styled-components';
 import SearchPopout from './SearchPopout'
 
 // STYLES
+const Wrapper = styled.div`
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
 const Navigation = styled.div`
 display: flex;
 width: 100vw;
@@ -108,6 +115,7 @@ class LibraryNav extends Component {
 
 
         return (
+            <Wrapper>
             <Navigation>
                 <button><Link to="/account"><i class="material-icons">keyboard_backspace</i></Link></button>
                 {/* <button onClick={this.openSearchBar}><i class="material-icons">add_circle_outline</i></button> */}
@@ -126,9 +134,10 @@ class LibraryNav extends Component {
                     </FormStyle>
                 </form>
 
-                {this.state.showPopout ? <SearchPopout isOpen={this.state.showPopout} onClose={this.closeSearchWindow} searchResults={this.state.searchResults} trackData={this.state.trackData} /> : null}
 
             </Navigation>
+                {this.state.showPopout ? <SearchPopout isOpen={this.state.showPopout} onClose={this.closeSearchWindow} searchResults={this.state.searchResults} trackData={this.state.trackData} /> : null}
+            </Wrapper>
         );
     }
 }

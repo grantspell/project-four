@@ -92,19 +92,19 @@ class ArtistsIndex extends Component {
     }
 
     render() {
-        
+
         return (
             <ArtistsWrapper>
                 {this.state.artists.map(artist => {
-                    if (artist.artist_type == 'audio') {
+                    if (artist.artist_type === 'audio') {
                         return (
                             <AudioArtistsWrapper key={artist.id} _id={artist.id}>
                                 <ImgDiv><img onMouseOver={this.imgMusic} onMouseOut={this.stopPlay} name={artist.id} src={artist.artist_image} /></ImgDiv>
                                 <AllContent>
-                                <NameDiv><h1>{artist.name}</h1></NameDiv>
+                                    <NameDiv><h1>{artist.name}</h1></NameDiv>
 
-                                <DescriptionDiv><p>{artist.description}</p></DescriptionDiv>
-                                <ButtonDiv><button><Link to={`/library/${artist.id}`}>Artistry</Link></button></ButtonDiv>
+                                    <DescriptionDiv><p>{artist.description}</p></DescriptionDiv>
+                                    <ButtonDiv><button><Link to={`/library/${artist.id}`}>Artistry</Link></button></ButtonDiv>
                                 </AllContent>
 
                             </AudioArtistsWrapper>
@@ -114,10 +114,10 @@ class ArtistsIndex extends Component {
                             <VisualArtistsWrapper key={artist.id} _id={artist.id}>
                                 <ImgDiv><img src={artist.artist_image} /></ImgDiv>
                                 <AllContent>
-                                <NameDiv><h1>{artist.name}</h1></NameDiv>
+                                    <NameDiv><h1>{artist.name}</h1></NameDiv>
 
-                                <DescriptionDiv><p>{artist.description}</p></DescriptionDiv>
-                                <ButtonDiv><button><Link to={`/library/${artist.id}`}>Artistry</Link></button></ButtonDiv>
+                                    <DescriptionDiv><p>{artist.description}</p></DescriptionDiv>
+                                    <ButtonDiv><button><Link to={`/library/${artist.id}`}>Artistry</Link></button></ButtonDiv>
                                 </AllContent>
 
                             </VisualArtistsWrapper>
@@ -125,7 +125,7 @@ class ArtistsIndex extends Component {
                     }
                 })}
                 <aPlayer>
-                <embed src={this.state.song} autoPlay="true" loop="true" hidden="true" type="audio/x-m4a"></embed>
+                    <embed src={this.state.song} autoPlay="true" loop="true" hidden="true" type="audio/x-m4a"></embed>
                 </aPlayer>
             </ArtistsWrapper>
         );

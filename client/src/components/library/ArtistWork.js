@@ -59,7 +59,7 @@ class ArtistWork extends Component {
             <ArtWrapper>
                 {this.state.artistry.map(art => {
 
-                    if(art.song == !undefined){
+                    if(art.song == undefined){
                         return (
                             <div className="visualArt" key={art.id} _id={art.id}>
                                 <h1>{art.title}</h1>

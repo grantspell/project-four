@@ -9,6 +9,17 @@ import Artist from './Artist'
 const ArtWrapper = styled.div`
     margin: 50px;
 `
+const VisualContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    img {
+        max-height: 300px;
+    }
+`
 const AudioStyle = styled.div`
     display:flex;
     flex-direction: row;
@@ -59,28 +70,30 @@ class ArtistWork extends Component {
             <ArtWrapper>
                 {this.state.artistry.map(art => {
 
-                    if(art.song == undefined){
+                    if (art.song == undefined) {
                         return (
-                            <div className="visualArt" key={art.id} _id={art.id}>
+                            <VisualContent className="visualArt" key={art.id} _id={art.id}>
                                 <h1>{art.title}</h1>
                                 <img src={art.visual_url} />
-                            </div>
-                        )} else {
-                            return (
-                                <AudioStyle className="audioArt" key={art.id} _id={art.id}>
-                                    <Image>
+                            </VisualContent>
+                        )
+                    } else {
+                        return (
+                            <AudioStyle className="audioArt" key={art.id} _id={art.id}>
+                                <Image>
                                     <img src={art.artworkUrl100} />
-                                    </Image>
-                                    <AudioText>
-                                        <p><span>Artist:</span> {art.artistName}</p>
-                                        <p><span>Track:</span> {art.trackName}</p>
-                                        <p><span>Album:</span> {art.collectionName}</p>
-                                    </AudioText>
-                                    <APlayer controls loop>
-                                        <source src={art.previewUrl} type="audio/wav" />
-                                    </APlayer>
-                                </AudioStyle>
-                        )}
+                                </Image>
+                                <AudioText>
+                                    <p><span>Artist:</span> {art.artistName}</p>
+                                    <p><span>Track:</span> {art.trackName}</p>
+                                    <p><span>Album:</span> {art.collectionName}</p>
+                                </AudioText>
+                                <APlayer controls loop>
+                                    <source src={art.previewUrl} type="audio/wav" />
+                                </APlayer>
+                            </AudioStyle>
+                        )
+                    }
                 })}
             </ArtWrapper>
         );

@@ -53,7 +53,7 @@ const AllContent = styled.div`
     margin-left: 5px;
     max-width: 25vw;
 `
-const aPlayer = styled.div`
+const Aplayer = styled.div`
     display: none;
 `
 
@@ -99,7 +99,7 @@ class ArtistsIndex extends Component {
                     if (artist.artist_type === 'audio') {
                         return (
                             <AudioArtistsWrapper key={artist.id} _id={artist.id}>
-                                <ImgDiv><img onMouseOver={this.imgMusic} onMouseOut={this.stopPlay} name={artist.id} src={artist.artist_image} /></ImgDiv>
+                                <ImgDiv><img onMouseOver={this.imgMusic} onMouseOut={this.stopPlay} name={artist.id} src={artist.artist_image} alt={artist.name} /></ImgDiv>
                                 <AllContent>
                                     <NameDiv><h1>{artist.name}</h1></NameDiv>
 
@@ -112,7 +112,7 @@ class ArtistsIndex extends Component {
                     } else {
                         return (
                             <VisualArtistsWrapper key={artist.id} _id={artist.id}>
-                                <ImgDiv><img src={artist.artist_image} /></ImgDiv>
+                                <ImgDiv><img src={artist.artist_image} alt={artist.name}/></ImgDiv>
                                 <AllContent>
                                     <NameDiv><h1>{artist.name}</h1></NameDiv>
 
@@ -124,9 +124,9 @@ class ArtistsIndex extends Component {
                         )
                     }
                 })}
-                <aPlayer>
+                <Aplayer>
                     <embed src={this.state.song} autoPlay="true" loop="true" hidden="true" type="audio/x-m4a"></embed>
-                </aPlayer>
+                </Aplayer>
             </ArtistsWrapper>
         );
     }

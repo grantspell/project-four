@@ -53,7 +53,7 @@ const AllContent = styled.div`
     margin-left: 5px;
     max-width: 25vw;
 `
-const Aplayer = styled.div`
+const aPlayer = styled.div`
     display: none;
 `
 
@@ -124,9 +124,9 @@ class ArtistsIndex extends Component {
                         )
                     }
                 })}
-                <Aplayer>
+                <aPlayer>
                     <embed src={this.state.song} autoPlay="true" loop="true" hidden="true" type="audio/x-m4a"></embed>
-                </Aplayer>
+                </aPlayer>
             </ArtistsWrapper>
         );
     }

@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios';
+import styled from 'styled-components';
 
 // COMPONENTS
 import UpdateUserForm from './UpdateUserForm'
+
+// STYLES
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+`
 
 class UserAccount extends Component {
     state = {
@@ -63,7 +74,7 @@ class UserAccount extends Component {
         }
         
         return (
-            <div>
+            <Wrapper>
                 <h1>{this.state.user.name}'s Account</h1>
                 <UpdateUserForm
                     user={this.state.user.name}
@@ -74,7 +85,7 @@ class UserAccount extends Component {
                     updateUser={this.updateUser}
                     deleteUser={this.deleteUser}
                 />
-            </div>
+            </Wrapper>
         );
     }
 }

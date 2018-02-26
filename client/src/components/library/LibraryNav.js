@@ -21,19 +21,19 @@ const FormStyle = styled.div`
 
 `
 
-class SearchWindow extends Component {
-    render() {
-        if(this.props.showPopout === true)
-        return (
-            <div>
-                {this.props.searchResults.results.map(result => {
-                    <h1>{result.trackName}</h1>
-                })}
-            </div>
-        );
-        return null
-    }
-}
+// class SearchWindow extends Component {
+//     render() {
+//         if (this.props.showPopout === true)
+//             return (
+//                 <div>
+//                     {this.props.searchResults.results.map(result => {
+//                         <h1>{result.trackName}</h1>
+//                     })}
+//                 </div>
+//             );
+//         return null
+//     }
+// }
 
 class LibraryNav extends Component {
     constructor(props) {
@@ -71,22 +71,22 @@ class LibraryNav extends Component {
 
         const [track] = this.state.searchResults
         await this.setState({ trackData: track })
-
-        const req = await axios.post(`/api/audio/add`, {
-            params: {
-                trackName: this.state.trackData.trackName,
-                artistName: this.state.trackData.artistName,
-                collectionName: this.state.trackData.collectionName,
-                artworkUrl100: this.state.trackData.artworkUrl100,
-                previewUrl: this.state.trackData.previewURL
-            }
-        })
-
-        // this.setState({ showPopout: true })
-
         console.log(this.state)
+
+        // const req = await axios.post(`/api/audio/add`, {
+        //     params: {
+        //         trackName: this.state.trackData.trackName,
+        //         artistName: this.state.trackData.artistName,
+        //         collectionName: this.state.trackData.collectionName,
+        //         artworkUrl100: this.state.trackData.artworkUrl100,
+        //         previewUrl: this.state.trackData.previewURL
+        //     }
+        // })
+
+        this.openSearchWindow();
+        debugger;
     }
-    
+
     openSearchWindow = () => {
         this.setState({ showPopout: true })
     }
@@ -96,15 +96,16 @@ class LibraryNav extends Component {
     }
 
     openSearchBar = () => {
-        const current = {...this.state.searchBarVis}
+        const current = { ...this.state.searchBarVis }
         this.setState({ searchBarVis: !current })
     }
 
     render() {
 
-        if (this.state.showPopout) {
-            return <SearchWindow isOpen={this.state.showPopout} onClose={this.closeSearchWindow} searchResults={this.state.searchResults} />            
-        }
+        // if (this.state.showPopout) {
+        //     return <SearchPopout isOpen={this.state.showPopout} onClose={this.closeSearchWindow} searchResults={this.state.searchResults} />
+        // }
+
 
         return (
             <Navigation>
@@ -124,6 +125,8 @@ class LibraryNav extends Component {
 
                     </FormStyle>
                 </form>
+
+                {this.state.showPopout ? <SearchPopout isOpen={this.state.showPopout} onClose={this.closeSearchWindow} searchResults={this.state.searchResults} trackData={this.state.trackData} /> : null}
 
             </Navigation>
         );

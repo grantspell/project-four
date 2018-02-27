@@ -45,12 +45,12 @@ const APlayer = styled.audio`
 
 const SearchPopout = (props) => {
 
-    const storeTrack = (e, name) => {
+    const storeTrack = (e) => {
         e.preventDefault();
 
-        let trackID = this.props.name;
+        let trackID = e.target.value;
         console.log(trackID)
-        this.storeTrack(trackID);
+        props.storeTrack(trackID);
     }
 
     return (
@@ -70,7 +70,7 @@ const SearchPopout = (props) => {
                     <source src={props.searchResults[0].previewUrl} type="audio/wav" />
                 </APlayer>
                 <AddButton>
-                    <button name="0" onClick={storeTrack}>Add To Library</button>
+                    <button value="0" onClick={storeTrack}>Add To Library</button>
                 </AddButton>
             </Track>
             <Track id={props.searchResults[1].id}>
@@ -88,7 +88,7 @@ const SearchPopout = (props) => {
                     <source src={props.searchResults[1].previewUrl} type="audio/wav" />
                 </APlayer>
                 <AddButton>
-                    <button name="1" onClick={storeTrack}>Add To Library</button>
+                    <button value="1" onClick={storeTrack}>Add To Library</button>
                 </AddButton>
             </Track>
             <Track id={props.searchResults[2].id}>
@@ -106,7 +106,7 @@ const SearchPopout = (props) => {
                     <source src={props.searchResults[2].previewUrl} type="audio/wav" />
                 </APlayer>
                 <AddButton>
-                    <button name="2" onClick={storeTrack}>Add To Library</button>
+                    <button value="2" onClick={storeTrack}>Add To Library</button>
                 </AddButton>
             </Track>
             <Track id={props.searchResults[3].id}>
@@ -124,7 +124,7 @@ const SearchPopout = (props) => {
                     <source src={props.searchResults[3].previewUrl} type="audio/wav" />
                 </APlayer>
                 <AddButton>
-                    <button name="3" onClick={storeTrack}>Add To Library</button>
+                    <button value="3" onClick={storeTrack}>Add To Library</button>
                 </AddButton>
             </Track>
             <Track id={props.searchResults[4].id}>
@@ -142,7 +142,7 @@ const SearchPopout = (props) => {
                     <source src={props.searchResults[4].previewUrl} type="audio/wav" />
                 </APlayer>
                 <AddButton>
-                    <button name="4" onClick={storeTrack}>Add To Library</button>
+                    <button value="4" onClick={storeTrack}>Add To Library</button>
                 </AddButton>
             </Track>
         </Wrapper>

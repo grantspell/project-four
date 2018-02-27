@@ -106,6 +106,32 @@ class LibraryNav extends Component {
         this.setState({ searchBarVis: !current })
     }
 
+    storeTrack = async (trackID) => {
+        console.log(trackID);
+
+        let trackToStore = await this.state.searchResults[`${trackID}`]
+        let artistPayload = {
+            name: trackToStore.artistName,
+            artist_type: 'audio',
+            description: trackToStore.artistViewUrl,
+            artist_image: trackToStore.artworkUrl100
+        }
+        console.log(artistPayload);
+        
+        const req = await axios.post(`/api/artist/${artistPayload}`)
+        
+        let trackPayload = {
+            trackName: '',
+            collectionName: '',
+            previewURL: '',
+            collection_id: '',
+            artist_id: '',
+            artworkUrl100: '',
+            artistName: ''
+        }
+        console.log(trackToStore);
+    }
+
     render() {
 
         // if (this.state.showPopout) {
@@ -135,7 +161,7 @@ class LibraryNav extends Component {
 
 
             </Navigation>
-                {this.state.showPopout ? <SearchPopout isOpen={this.state.showPopout} onClose={this.closeSearchWindow} searchResults={this.state.searchResults} trackData={this.state.trackData} /> : null}
+                {this.state.showPopout ? <SearchPopout isOpen={this.state.showPopout} onClose={this.closeSearchWindow} searchResults={this.state.searchResults} trackData={this.state.trackData} storeTrack={this.storeTrack} /> : null}
             </Wrapper>
         );
     }

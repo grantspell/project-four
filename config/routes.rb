@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     get "/artists/:id", to: "artists#show", as: "artist"
     get "/artists/:artist_id/artistry", to: "artists#artistry", as: "artistry"
     get "/artists/:artist_id/song", to: "artists#show_song", as: "song"
+    post "/artists/:artist_params", to: "artists#create"
   end
 
   # art from `library`

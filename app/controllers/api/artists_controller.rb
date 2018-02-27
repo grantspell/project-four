@@ -47,5 +47,20 @@ class Api::ArtistsController < ApplicationController
 
         render json: @artistSong
     end
+
+    def create
+        artistData = params[:artist_params]
+
+        @artist = Artist.new do |a|
+            a.name = artistData.name
+            a.artist_type = artistData.artist_type
+            a.description = artistData.description
+            a.artist_image = artistData.artist_image
+        end
+
+        if @artist.save
+            render json: @artist
+        end
+    end
     
 end

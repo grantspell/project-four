@@ -91,7 +91,6 @@ class LibraryNav extends Component {
         // })
 
         this.openSearchWindow();
-        debugger;
     }
 
     openSearchWindow = () => {

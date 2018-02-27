@@ -18,6 +18,8 @@ const Track = styled.div`
     height: 300px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
     img {
         max-height: 100px;
@@ -25,6 +27,8 @@ const Track = styled.div`
 `
 const TrackHead = styled.div`
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 `
 const AlbumArt = styled.div`
 
@@ -32,11 +36,23 @@ const AlbumArt = styled.div`
 const TrackDetails = styled.div`
 
 `
+const AddButton = styled.div`
+    
+`
 const APlayer = styled.audio`
 
 `
 
 const SearchPopout = (props) => {
+
+    const storeTrack = (e, name) => {
+        e.preventDefault();
+
+        let trackID = this.props.name;
+        console.log(trackID)
+        this.storeTrack(trackID);
+    }
+
     return (
         <Wrapper>
             <Track id={props.searchResults[0].id}>
@@ -53,6 +69,9 @@ const SearchPopout = (props) => {
                 <APlayer controls loop>
                     <source src={props.searchResults[0].previewUrl} type="audio/wav" />
                 </APlayer>
+                <AddButton>
+                    <button name="0" onClick={storeTrack}>Add To Library</button>
+                </AddButton>
             </Track>
             <Track id={props.searchResults[1].id}>
                 <TrackHead>
@@ -68,6 +87,9 @@ const SearchPopout = (props) => {
                 <APlayer controls loop>
                     <source src={props.searchResults[1].previewUrl} type="audio/wav" />
                 </APlayer>
+                <AddButton>
+                    <button name="1" onClick={storeTrack}>Add To Library</button>
+                </AddButton>
             </Track>
             <Track id={props.searchResults[2].id}>
                 <TrackHead>
@@ -83,6 +105,9 @@ const SearchPopout = (props) => {
                 <APlayer controls loop>
                     <source src={props.searchResults[2].previewUrl} type="audio/wav" />
                 </APlayer>
+                <AddButton>
+                    <button name="2" onClick={storeTrack}>Add To Library</button>
+                </AddButton>
             </Track>
             <Track id={props.searchResults[3].id}>
                 <TrackHead>
@@ -98,6 +123,9 @@ const SearchPopout = (props) => {
                 <APlayer controls loop>
                     <source src={props.searchResults[3].previewUrl} type="audio/wav" />
                 </APlayer>
+                <AddButton>
+                    <button name="3" onClick={storeTrack}>Add To Library</button>
+                </AddButton>
             </Track>
             <Track id={props.searchResults[4].id}>
                 <TrackHead>
@@ -113,6 +141,9 @@ const SearchPopout = (props) => {
                 <APlayer controls loop>
                     <source src={props.searchResults[4].previewUrl} type="audio/wav" />
                 </APlayer>
+                <AddButton>
+                    <button name="4" onClick={storeTrack}>Add To Library</button>
+                </AddButton>
             </Track>
         </Wrapper>
     );

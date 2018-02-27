@@ -43,3 +43,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Additional Gems
 gem 'hirb'
+
+ruby '2.3.4'
